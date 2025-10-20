@@ -495,6 +495,20 @@ DEPLOY_ROOT=c:\Deployment
 - ✅ Komentáre v slovenčine pre business logiku
 - ✅ Anglické názvy premenných/funkcií
 
+### 🚨 PROJECT_FILE_ACCESS.JSON REFRESH:
+- ✅ **KEĎ VYTVORÍŠ NOVÝ SÚBOR → Vždy pripomeň refresh project_file_access.json**
+- ✅ Na konci každej session
+- ✅ Po pridaní nového .md súboru
+- ✅ Po vytvorení nového .py modulu
+- ✅ Po pridaní dokumentácie
+- ✅ Jednoduchá pripomienka: **"⚠️ Nezabudni refreshnúť project_file_access.json"**
+
+### Workflow po zmene súborov:
+1. Commitni zmeny
+2. Updatni PROJECT_STATUS.md
+3. **Pripomeň project_file_access.json refresh ak vznikli nové súbory**
+4. Push na GitHub
+
 ---
 
 ## ✅ KRITÉRIÁ ÚSPECHU
@@ -550,6 +564,14 @@ This document contains:
 **Simply respond:**
 ```
 ✅ Projekt načítaný. Čo robíme?
+```
+
+**CRITICAL WORKFLOW REMINDER:**
+```
+After creating ANY new file in the project:
+⚠️ Remind user: "Nezabudni refreshnúť project_file_access.json"
+
+This ensures multi-file context loading works in future chats.
 ```
 
 ---

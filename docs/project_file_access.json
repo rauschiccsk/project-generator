@@ -2,8 +2,8 @@
   "project": "project-generator",
   "github_repo": "https://github.com/rauschiccsk/project-generator",
   "branch": "main",
-  "generated_at": "2025-10-20T15:45:55.052443",
-  "total_files": 18,
+  "generated_at": "2025-10-20T18:22:32.025471",
+  "total_files": 20,
   "files": [
     {
       "path": ".env.template",
@@ -20,7 +20,7 @@
     {
       "path": "configs\\config_template.yaml",
       "name": "config_template.yaml",
-      "size": 3040,
+      "size": 3044,
       "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/configs/config_template.yaml"
     },
     {
@@ -38,37 +38,37 @@
     {
       "path": "docs\\FULL_PROJECT_CONTEXT.md",
       "name": "FULL_PROJECT_CONTEXT.md",
-      "size": 14496,
+      "size": 16168,
       "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/FULL_PROJECT_CONTEXT.md"
     },
     {
       "path": "docs\\MASTER_CONTEXT.md",
       "name": "MASTER_CONTEXT.md",
-      "size": 4248,
+      "size": 4344,
       "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/MASTER_CONTEXT.md"
     },
     {
       "path": "docs\\project_file_access.json",
       "name": "project_file_access.json",
-      "size": 3367,
+      "size": 4280,
       "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/project_file_access.json"
     },
     {
       "path": "docs\\PROJECT_STATUS.md",
       "name": "PROJECT_STATUS.md",
-      "size": 8392,
+      "size": 8221,
       "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/PROJECT_STATUS.md"
     },
     {
       "path": "docs\\QUICK_START.md",
       "name": "QUICK_START.md",
-      "size": 9071,
+      "size": 1777,
       "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/QUICK_START.md"
     },
     {
       "path": "docs\\SYSTEM_PROMPT.md",
       "name": "SYSTEM_PROMPT.md",
-      "size": 5291,
+      "size": 4388,
       "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/SYSTEM_PROMPT.md"
     },
     {
@@ -80,7 +80,7 @@
     {
       "path": "requirements.txt",
       "name": "requirements.txt",
-      "size": 1018,
+      "size": 1080,
       "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/requirements.txt"
     },
     {
@@ -102,10 +102,22 @@
       "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/src/generator/__init__.py"
     },
     {
+      "path": "src\\generator\\config_parser.py",
+      "name": "config_parser.py",
+      "size": 6943,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/src/generator/config_parser.py"
+    },
+    {
       "path": "src\\models\\__init__.py",
       "name": "__init__.py",
-      "size": 0,
+      "size": 453,
       "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/src/models/__init__.py"
+    },
+    {
+      "path": "src\\models\\project_config.py",
+      "name": "project_config.py",
+      "size": 8056,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/src/models/project_config.py"
     },
     {
       "path": "tests\\__init__.py",
