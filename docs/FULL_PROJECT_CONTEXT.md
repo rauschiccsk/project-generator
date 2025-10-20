@@ -12,13 +12,25 @@
 
 **When you see this document at the start of a conversation:**
 
-1. This means the user wants to continue working on the Project Generator
-2. Load the following critical files from GitHub:
-   - `docs/project_file_access.json`
-   - `docs/PROJECT_STATUS.md`
-3. After loading all files, respond with: **"✅ Projekt načítaný. Čo robíme?"**
-4. Then wait for user's instructions on what to work on
-5. ALWAYS check PROJECT_STATUS.md for current state before starting work
+1. Load additional critical files by asking user to provide these URLs:
+   - `docs/project_file_access.json` - Complete file listing
+   - `docs/PROJECT_STATUS.md` - Current development status
+
+2. After user provides URLs and you load them, respond with: **"✅ Projekt načítaný. Čo robíme?"**
+
+3. Then wait for user's instructions on what to work on
+
+4. ALWAYS check PROJECT_STATUS.md for current state before starting work
+
+**Quick Start for User:**
+```
+Pokračujeme v projekte Project Generator.
+
+Načítaj tieto súbory:
+https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/FULL_PROJECT_CONTEXT.md
+https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/project_file_access.json
+https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/PROJECT_STATUS.md
+```
 
 **GitHub Repository:**
 ```
@@ -122,26 +134,21 @@ Language: Python 3.11+
 Templating: Jinja2
 Config: YAML (PyYAML)
 Validation: Pydantic
-GitHub API: requests / PyGithub
+GitHub API: PyGithub
 Testing: pytest
 IDE: PyCharm
 ```
 
 ### Dependencies
 ```
-pydantic>=2.0.0       # Data validation
-jinja2>=3.1.0         # Template engine
-pyyaml>=6.0          # YAML parsing
-pygithub>=2.1.0       # GitHub API client
+pydantic>=2.5.0       # Data validation
+jinja2>=3.1.2         # Template engine
+pyyaml>=6.0.1         # YAML parsing
+pygithub>=2.1.1       # GitHub API client
 requests>=2.31.0      # HTTP client
 python-dotenv>=1.0.0  # Environment variables
-pytest>=7.4.0         # Testing
-```
-
-### Optional (n8n integration)
-```
-- n8n server (already exists)
-- Email SMTP (Gmail)
+GitPython>=3.1.40     # Git operations
+pytest>=7.4.3         # Testing
 ```
 
 ---
@@ -153,8 +160,8 @@ c:\Development\project-generator/
 │
 ├── docs/                                    
 │   ├── FULL_PROJECT_CONTEXT.md            # This file
-│   ├── PROJECT_STATUS.md                   
-│   ├── project_file_access.json            
+│   ├── PROJECT_STATUS.md                  # Development tracking
+│   ├── project_file_access.json           # All files with raw URLs
 │   ├── architecture/
 │   │   ├── system-overview.md
 │   │   ├── n8n-workflow.md
@@ -204,7 +211,7 @@ c:\Development\project-generator/
 │       └── sample_config.yaml
 │
 ├── scripts/                                 
-│   ├── generate_project_access.py         
+│   ├── generate_project_access.py         # Generate project_file_access.json
 │   └── validate_templates.py              
 │
 ├── configs/                                 
@@ -314,22 +321,6 @@ python src/generator/project_creator.py --config configs/my_project.yaml
 ⏱️ Time: 28.3s
 ```
 
-### Programmatic Usage
-
-```python
-from pathlib import Path
-from src.generator.project_creator import ProjectCreator
-
-# Load config and create project
-creator = ProjectCreator(Path("configs/my_project.yaml"))
-result = creator.create_project()
-
-if result.success:
-    print(f"✅ Project created: {result.github_url}")
-else:
-    print(f"❌ Error: {result.error_message}")
-```
-
 ---
 
 ## 🎯 GENERATED FILES
@@ -369,7 +360,7 @@ Every generated project will contain:
 
 ```bash
 # GitHub API
-GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxx
+GITHUB_TOKEN=github_pat_xxxxxxxxxxxxx
 GITHUB_USERNAME=rauschiccsk
 
 # Email Notifications (optional)
@@ -390,9 +381,10 @@ DEPLOY_ROOT=c:\Deployment
 
 ### STORY 1: Core Generator ⚙️ (Current)
 **Priority:** CRITICAL  
+**Status:** 🔄 In Progress  
 **Estimated:** 2 weeks  
 
-- [ ] 1.1 - Project setup and documentation ✅ (this task)
+- [x] 1.1 - Project setup and documentation ✅
 - [ ] 1.2 - Pydantic models (ProjectConfig)
 - [ ] 1.3 - YAML config parser
 - [ ] 1.4 - Template engine (Jinja2)
@@ -407,7 +399,7 @@ DEPLOY_ROOT=c:\Deployment
 
 ### STORY 2: n8n Integration 🤖
 **Priority:** MEDIUM  
-**Estimated:** 3-5 days  
+**Status:** ⏳ Planned  
 
 - [ ] 2.1 - File monitor workflow
 - [ ] 2.2 - Python executor node
@@ -417,7 +409,7 @@ DEPLOY_ROOT=c:\Deployment
 
 ### STORY 3: Advanced Features 🚀
 **Priority:** LOW  
-**Estimated:** 1 week  
+**Status:** ⏳ Planned  
 
 - [ ] 3.1 - CLI interface (Click/Typer)
 - [ ] 3.2 - Custom templates support
@@ -458,7 +450,7 @@ DEPLOY_ROOT=c:\Deployment
 ## ⚠️ CRITICAL REMINDERS
 
 ### For Every New Chat:
-1. 🔥 **ALWAYS** load GitHub files first
+1. 🔥 **ALWAYS** load GitHub files first (use multi-URL approach)
 2. 🔥 **NEVER** assume project structure
 3. 🔥 **ALWAYS** check PROJECT_STATUS.md
 4. 🔥 **ALWAYS** commit + push after work

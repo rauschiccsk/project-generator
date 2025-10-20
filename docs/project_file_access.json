@@ -1,0 +1,93 @@
+{
+  "project": "project-generator",
+  "github_repo": "https://github.com/rauschiccsk/project-generator",
+  "branch": "main",
+  "generated_at": "2025-10-20T14:39:28.042641",
+  "total_files": 14,
+  "files": [
+    {
+      "path": ".env.template",
+      "name": ".env.template",
+      "size": 974,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/.env.template"
+    },
+    {
+      "path": ".gitignore",
+      "name": ".gitignore",
+      "size": 1137,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/.gitignore"
+    },
+    {
+      "path": "configs\\config_template.yaml",
+      "name": "config_template.yaml",
+      "size": 3040,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/configs/config_template.yaml"
+    },
+    {
+      "path": "configs\\examples\\monastier_online.yaml",
+      "name": "monastier_online.yaml",
+      "size": 1166,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/configs/examples/monastier_online.yaml"
+    },
+    {
+      "path": "configs\\examples\\supplier_invoice.yaml",
+      "name": "supplier_invoice.yaml",
+      "size": 1061,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/configs/examples/supplier_invoice.yaml"
+    },
+    {
+      "path": "docs\\FULL_PROJECT_CONTEXT.md",
+      "name": "FULL_PROJECT_CONTEXT.md",
+      "size": 14541,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/FULL_PROJECT_CONTEXT.md"
+    },
+    {
+      "path": "docs\\PROJECT_STATUS.md",
+      "name": "PROJECT_STATUS.md",
+      "size": 7027,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/PROJECT_STATUS.md"
+    },
+    {
+      "path": "README.md",
+      "name": "README.md",
+      "size": 5626,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/README.md"
+    },
+    {
+      "path": "requirements.txt",
+      "name": "requirements.txt",
+      "size": 1018,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/requirements.txt"
+    },
+    {
+      "path": "scripts\\generate_project_access.py",
+      "name": "generate_project_access.py",
+      "size": 4903,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/scripts/generate_project_access.py"
+    },
+    {
+      "path": "src\\__init__.py",
+      "name": "__init__.py",
+      "size": 0,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/src/__init__.py"
+    },
+    {
+      "path": "src\\generator\\__init__.py",
+      "name": "__init__.py",
+      "size": 0,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/src/generator/__init__.py"
+    },
+    {
+      "path": "src\\models\\__init__.py",
+      "name": "__init__.py",
+      "size": 0,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/src/models/__init__.py"
+    },
+    {
+      "path": "tests\\__init__.py",
+      "name": "__init__.py",
+      "size": 0,
+      "raw_url": "https://raw.githubusercontent.com/rauschiccsk/project-generator/main/tests/__init__.py"
+    }
+  ]
+}
