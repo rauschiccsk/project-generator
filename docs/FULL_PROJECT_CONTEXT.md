@@ -29,9 +29,9 @@
 ### Prehľad
 - **Projekt:** Project Generator (automatizácia tvorby projektov)
 - **Fáza:** Počiatočné nastavenie
-- **Celkový Progress:** 8% (1/12 taskov v STORY 1)
+- **Celkový Progress:** 25% (3/12 taskov v STORY 1)
 - **Aktívna Story:** STORY 1 - Core Generator
-- **Aktívny Task:** Task 1.1 - Dokumentácia ✅ HOTOVO
+- **Aktívny Task:** Task 1.4 - Template Engine (Jinja2)
 - **Posledná Session:** 2025-10-20
 - **Ďalší Milestone:** STORY 1 Complete (2025-11-09)
 
@@ -40,11 +40,18 @@
 - ✅ 2025-10-20: GitHub repository vytvorený
 - ✅ 2025-10-20: Dokumentačná štruktúra vytvorená
 - ✅ 2025-10-20: Všetky core dokumenty vytvorené
-- 🔄 2025-10-20: Pracujeme na dokumentácii
+- ✅ 2025-10-20: Task 1.1 - Dokumentácia HOTOVÁ
+- ✅ 2025-10-20: Task 1.2 - Pydantic Modely HOTOVÉ
+- ✅ 2025-10-20: Task 1.3 - YAML Config Parser HOTOVÝ
 
 ### Aktívne Tasky
 - [x] **STORY 1 Task 1.1** - Dokumentácia ✅ HOTOVO
-- [ ] **STORY 1 Task 1.2** - Pydantic modely (Ďalší)
+- [x] **STORY 1 Task 1.2** - Pydantic modely ✅ HOTOVO
+- [x] **STORY 1 Task 1.3** - YAML Config Parser ✅ HOTOVO
+- [ ] **STORY 1 Task 1.4** - Template Engine (Ďalší)
+
+### Blokery
+- Žiadne momentálne
 
 ### Blokery
 - Žiadne momentálne
