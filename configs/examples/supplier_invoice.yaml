@@ -1,0 +1,52 @@
+# Example Configuration: Supplier Invoice Loader Project
+
+project:
+  name: "Supplier Invoice Loader"
+  slug: "supplier-invoice-loader"
+  description: "Automatizované spracovanie dodávateľských faktúr cez email → n8n → Python → NEX Genesis"
+
+github:
+  username: "rauschiccsk"
+  repo_name: "supplier-invoice-loader"
+  visibility: "private"
+
+developer:
+  name: "ICC"
+  email: "rausch@icc.sk"
+
+paths:
+  local_dev: "c:\\Development\\supplier_invoice_loader"
+  local_deploy: ""
+
+tech_stack:
+  backend:
+    - "fastapi"
+    - "sqlalchemy"
+    - "pdfplumber"
+  databases:
+    - "sqlite"
+  automation:
+    - "n8n"
+  other:
+    - "cloudflared"
+
+optional:
+  domain: ""
+  contact_email: ""
+  project_type: "automation_tool"
+
+features:
+  include_auth: false
+  include_api_docs: true
+  include_tests: true
+  include_docker: false
+  include_cicd: false
+  include_migrations: false
+
+deployment:
+  server_os: "Windows 11"
+  python_version: "3.11"
+  server_specs:
+    cpu: "2 cores"
+    ram: "4GB"
+    disk: "50GB SSD"

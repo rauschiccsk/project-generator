@@ -1,0 +1,32 @@
+# Project Generator - Python Dependencies
+# Python 3.11+
+
+# Core Dependencies
+pydantic>=2.5.0              # Data validation and settings management
+jinja2>=3.1.2                # Template engine
+pyyaml>=6.0.1                # YAML parsing
+python-dotenv>=1.0.0         # Environment variables management
+
+# GitHub Integration
+PyGithub>=2.1.1              # GitHub API v3 client
+requests>=2.31.0             # HTTP library
+
+# Git Operations
+GitPython>=3.1.40            # Git repository management
+
+# CLI (optional, for future)
+click>=8.1.7                 # CLI framework
+rich>=13.7.0                 # Terminal formatting
+
+# Testing
+pytest>=7.4.3                # Testing framework
+pytest-cov>=4.1.0            # Coverage plugin
+pytest-mock>=3.12.0          # Mocking plugin
+
+# Code Quality
+black>=23.12.0               # Code formatter
+flake8>=6.1.0                # Linter
+mypy>=1.7.1                  # Type checker
+
+# Development
+ipython>=8.18.1              # Enhanced Python shell

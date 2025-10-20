@@ -1,0 +1,121 @@
+# ===================================
+# PROJECT GENERATOR - Configuration Template
+# ===================================
+# Copy this file and fill in your project details
+# Then run: python src/generator/project_creator.py --config your_config.yaml
+
+# === BASIC INFO ===
+project:
+  # Project name (human-readable, can contain spaces)
+  name: "My New Project"
+
+  # URL-friendly slug (lowercase, hyphens only)
+  # Example: "my-new-project"
+  slug: "my-new-project"
+
+  # Brief description of what this project does
+  description: "Brief description of the project purpose and goals"
+
+# === GITHUB ===
+github:
+  # Your GitHub username
+  username: "rauschiccsk"
+
+  # Repository name (should match slug or be similar)
+  repo_name: "my-new-project"
+
+  # Repository visibility: "public" or "private"
+  visibility: "private"
+
+# === DEVELOPER ===
+developer:
+  # Your name or company name
+  name: "ICC"
+
+  # Your email address
+  email: "rausch@icc.sk"
+
+# === PATHS ===
+paths:
+  # Local development path (where project will be created)
+  # Windows example: "c:\\Development\\my-new-project"
+  # Linux example: "/home/user/Development/my-new-project"
+  local_dev: "c:\\Development\\my-new-project"
+
+  # Optional: Deployment path (leave empty if not needed)
+  local_deploy: ""
+
+# === TECH STACK ===
+tech_stack:
+  # Backend technologies (list)
+  backend:
+    - "fastapi"
+    - "sqlalchemy"
+
+  # Frontend technologies (list)
+  frontend:
+    - "jinja2"
+    - "tailwindcss"
+    - "alpine.js"
+
+  # Databases (list)
+  databases:
+    - "postgresql"
+    - "redis"
+
+  # Automation tools (list)
+  automation:
+    - "n8n"
+    - "celery"
+
+  # Other technologies (optional)
+  other:
+    - "docker"
+
+# === OPTIONAL INFO ===
+optional:
+  # Domain name (if you have one)
+  domain: ""
+
+  # Contact email for the project (can be different from developer email)
+  contact_email: ""
+
+  # Project type (for documentation purposes)
+  # Options: "web_application", "api_service", "automation_tool", "library"
+  project_type: "web_application"
+
+# === FEATURES (true/false) ===
+# These determine what gets included in the generated project
+features:
+  # Include user authentication system (JWT, login/register)
+  include_auth: true
+
+  # Include API documentation (FastAPI Swagger/ReDoc)
+  include_api_docs: true
+
+  # Include testing setup (pytest, fixtures)
+  include_tests: true
+
+  # Include Docker configuration (Dockerfile, docker-compose.yml)
+  include_docker: false
+
+  # Include CI/CD pipeline (GitHub Actions)
+  include_cicd: false
+
+  # Include database migrations (Alembic)
+  include_migrations: false
+
+# === DEPLOYMENT INFO (Optional) ===
+# This information will be used in documentation
+deployment:
+  # Target server OS
+  server_os: "Ubuntu 22.04"  # or "Windows Server 2022"
+
+  # Python version
+  python_version: "3.11"
+
+  # Server specifications (optional, for documentation)
+  server_specs:
+    cpu: "2+ cores"
+    ram: "4GB+"
+    disk: "50GB+ SSD"
