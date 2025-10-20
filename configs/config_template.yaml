@@ -75,10 +75,10 @@ tech_stack:
 # === OPTIONAL INFO ===
 optional:
   # Domain name (if you have one)
-  domain: ""
+  domain: null
 
   # Contact email for the project (can be different from developer email)
-  contact_email: ""
+  contact_email: null
 
   # Project type (for documentation purposes)
   # Options: "web_application", "api_service", "automation_tool", "library"
