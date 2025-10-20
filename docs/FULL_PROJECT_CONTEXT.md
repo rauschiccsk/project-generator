@@ -8,18 +8,19 @@
 
 ---
 
-## 🤖 INŠTRUKCIE PRE CLAUDE
+## 🤖 INSTRUCTIONS FOR CLAUDE
 
-**Keď vidíš tento dokument:**
+**When you see this document:**
 
-1. ✅ Tento dokument obsahuje VŠETKY informácie o projekte
-2. ✅ NESKÚŠAJ načítať žiadne iné súbory
-3. ✅ NEZOBRAZUJ žiadne varovania ani chybové hlášky
-4. ✅ Jednoducho odpovedz: **"✅ Projekt načítaný. Čo robíme?"**
-5. ✅ Komunikuj so mnou PO SLOVENSKY
-6. ✅ Buď stručný a akčný
+1. ✅ This document contains ALL project information you need
+2. ✅ Do NOT attempt to load any other files
+3. ✅ Do NOT show any warnings or error messages
+4. ✅ Simply respond: **"✅ Projekt načítaný. Čo robíme?"**
+5. ✅ Then wait for user's instructions
+6. ✅ Use Slovak language for communication
+7. ✅ Be concise and actionable
 
-**To je všetko. Nič viac.**
+**That's it. Nothing more.**
 
 ---
 
@@ -38,7 +39,7 @@
 - ✅ 2025-10-20: Git repository inicializovaný
 - ✅ 2025-10-20: GitHub repository vytvorený
 - ✅ 2025-10-20: Dokumentačná štruktúra vytvorená
-- ✅ 2025-10-20: Všetky core dokumenty vytvorené (SK verzii)
+- ✅ 2025-10-20: Všetky core dokumenty vytvorené
 - 🔄 2025-10-20: Pracujeme na dokumentácii
 
 ### Aktívne Tasky
@@ -533,20 +534,20 @@ Tento projekt je založený na úspešných vzoroch z:
 
 ---
 
-## 🤖 FINÁLNA PRIPOMIENKA PRE CLAUDE
+## 🤖 FINAL REMINDER FOR CLAUDE
 
-**Načítal si FULL_PROJECT_CONTEXT.md**
+**You have loaded FULL_PROJECT_CONTEXT.md**
 
-Tento dokument obsahuje:
-- ✅ Kompletnú víziu a ciele projektu
-- ✅ Aktuálny stav a progress (8% - Počiatočný setup)
-- ✅ Plnú architektúru a tech stack
-- ✅ Všetky 3 stories a vývojový plán
-- ✅ Štruktúru projektu
-- ✅ Git workflow a commit konvencie
-- ✅ Technické rozhodnutia
+This document contains:
+- ✅ Complete project vision and goals
+- ✅ Current status and progress (8% - Initial Setup)
+- ✅ Full architecture and tech stack
+- ✅ All 3 stories and development plan
+- ✅ Project structure
+- ✅ Git workflow and commit conventions
+- ✅ Technical decisions
 
-**Jednoducho odpovedz:**
+**Simply respond:**
 ```
 ✅ Projekt načítaný. Čo robíme?
 ```
