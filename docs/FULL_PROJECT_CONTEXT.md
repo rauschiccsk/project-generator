@@ -2,81 +2,101 @@
 
 **Automatizácia tvorby nových Python projektov**
 
-**Last Updated:** 2025-10-20  
-**Version:** 0.1.0  
-**Status:** Initial Setup Phase
+---
+
+## 🇸🇰 IMPORTANT: SLOVAK LANGUAGE REQUIRED
+
+**⚠️ CRITICAL INSTRUCTION FOR CLAUDE ⚠️**
+
+**You MUST communicate in SLOVAK language (slovenčina) with this user.**
+
+- User name: **ICC**
+- User speaks Slovak
+- ALL responses must be in Slovak
+- ALL questions must be in Slovak
+- ALL explanations must be in Slovak
+- Technical terms can stay in English, but sentences in Slovak
+- Code comments for business logic in Slovak
+- Variable/function names in English (PEP 8 standard)
+
+**DO NOT respond in English. This is mandatory.**
 
 ---
 
 ## 🤖 INSTRUCTIONS FOR CLAUDE
 
-**When you see this document at the start of a conversation:**
+**When you see this document at the start of a conversation, follow these steps:**
 
-### 1. IMMEDIATELY Fetch These URLs (in this order):
+### Step 1: Load Additional Files
 
-Use the `web_fetch` tool to load these files RIGHT NOW:
+**Use the `web_fetch` tool to load these files immediately (do not ask user):**
 
+**File 1:**
 ```
 https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/SYSTEM_PROMPT.md
+```
+
+**File 2:**
+```
 https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/MASTER_CONTEXT.md
+```
+
+**File 3:**
+```
 https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/PROJECT_STATUS.md
+```
+
+**File 4:**
+```
 https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/project_file_access.json
 ```
 
-**CRITICAL:** 
-- Use `web_fetch` tool with each URL individually
-- Do NOT ask user for URLs - fetch them immediately and automatically
-- These files MUST be loaded before responding to user
+**If any file fails to load:** Inform user in Slovak that the file couldn't be loaded and ask them to verify it exists on GitHub.
 
-### 2. Language & Communication
+### Step 2: After Loading Files Successfully
 
-**IMPORTANT:** Communicate with the user in **SLOVAK language** (slovenčina).
-- All responses, explanations, and questions should be in Slovak
-- Code comments for business logic should be in Slovak  
-- Technical terms can remain in English where appropriate
-- Variable/function names in English (PEP 8)
-- User's name: **ICC**
+**Respond in SLOVAK with this format:**
 
-### 3. After Successfully Loading All Files
-
-Respond with:
 ```
 ✅ Projekt načítaný!
-📊 Status: [current phase from PROJECT_STATUS.md]
-🎯 Progress: [percentage from PROJECT_STATUS.md]
-⚙️ Aktuálny task: [current task from PROJECT_STATUS.md]
+📊 Status: [fáza z PROJECT_STATUS.md]
+🎯 Progress: [percento z PROJECT_STATUS.md]
+⚙️ Aktuálny task: [task z PROJECT_STATUS.md]
 
 Čo robíme?
 ```
 
-### 4. ALWAYS Check Status Before Work
+### Step 3: Before Any Work
 
-Before starting ANY work:
-- 🔥 **CHECK** PROJECT_STATUS.md for current story/task
-- 🔥 **VERIFY** what was completed in last session
-- 🔥 **ASK** user which task to work on
-- 🔥 **NEVER** assume project structure without checking files
+**Always do this in Slovak:**
+1. Check PROJECT_STATUS.md for current task
+2. Ask user which task to work on
+3. Never assume project structure without checking
 
-### 5. Git Workflow (After Every Change)
+### Step 4: Git Workflow
 
+**After every change:**
 ```bash
 git add .
-git commit -m "descriptive message in English"
+git commit -m "message in English"
 git push origin main
 ```
 
-**Update documentation after EVERY session:**
-- Update PROJECT_STATUS.md with progress
-- Create session note in docs/sessions/YYYY-MM-DD-description.md
-- Update project_file_access.json if files added/removed
-- Commit and push all changes
+**Update after every session:**
+- Update PROJECT_STATUS.md
+- Create session note in docs/sessions/
+- Commit and push
 
-**GitHub Repository:**
-```
-URL: https://github.com/rauschiccsk/project-generator
-Branch: main
-Local path: c:\Development\project-generator
-```
+---
+
+**Last Updated:** 2025-10-20  
+**Version:** 0.1.0  
+**Status:** Initial Setup Phase
+
+**Repository:**
+- GitHub: https://github.com/rauschiccsk/project-generator
+- Branch: main
+- Local: c:\Development\project-generator
 
 ---
 
@@ -512,19 +532,17 @@ DEPLOY_ROOT=c:\Deployment
 ## ⚠️ CRITICAL REMINDERS
 
 ### For Every New Chat:
-1. 🔥 **ALWAYS** load GitHub files first (use web_fetch)
-2. 🔥 **NEVER** assume project structure
-3. 🔥 **ALWAYS** check PROJECT_STATUS.md
-4. 🔥 **ALWAYS** commit + push after work
-5. 🔥 **ALWAYS** update session notes
-6. 🔥 **COMMUNICATE** in Slovak language
+1. 🔥 **LOAD** GitHub files first (web_fetch tool)
+2. 🔥 **CHECK** PROJECT_STATUS.md before work
+3. 🔥 **COMMUNICATE** in Slovak language
+4. 🔥 **COMMIT** + push after changes
+5. 🔥 **UPDATE** documentation
 
 ### Git Rules:
 - ✅ Commit often, small changes
 - ✅ Descriptive commit messages
 - ✅ Test before commit
 - ✅ Pull before push
-- ✅ Feature branches for new features
 
 ### Code Standards:
 - ✅ PEP 8 style guide
