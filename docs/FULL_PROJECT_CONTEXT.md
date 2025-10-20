@@ -1,10 +1,10 @@
 # 🏭 PROJECT-GENERATOR - FULL PROJECT CONTEXT
 
-**Automated Python project creation with complete documentation infrastructure**
+**Automatizácia tvorby nových Python projektov**
 
 **Last Updated:** 2025-10-20  
 **Version:** 0.1.0  
-**Status:** Initial Setup Complete - Ready for Development
+**Status:** Initial Setup Phase
 
 ---
 
@@ -12,84 +12,89 @@
 
 **When you see this document at the start of a conversation:**
 
-1. This document contains everything needed to work on the project
-2. Respond with: **"✅ Projekt načítaný. Čo robíme?"**
-3. Wait for user's instructions
-4. Check the CURRENT PROJECT STATUS section below for latest progress
+### 1. IMMEDIATELY Fetch These URLs (in this order):
 
-**User should provide just this one URL:**
+Use the `web_fetch` tool to load these files RIGHT NOW:
+
 ```
-https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/FULL_PROJECT_CONTEXT.md
+https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/SYSTEM_PROMPT.md
+https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/MASTER_CONTEXT.md
+https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/PROJECT_STATUS.md
+https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/project_file_access.json
 ```
 
----
+**CRITICAL:** 
+- Use `web_fetch` tool with each URL individually
+- Do NOT ask user for URLs - fetch them immediately and automatically
+- These files MUST be loaded before responding to user
 
-## 📊 CURRENT PROJECT STATUS
+### 2. Language & Communication
 
-### GitHub Repository
+**IMPORTANT:** Communicate with the user in **SLOVAK language** (slovenčina).
+- All responses, explanations, and questions should be in Slovak
+- Code comments for business logic should be in Slovak  
+- Technical terms can remain in English where appropriate
+- Variable/function names in English (PEP 8)
+- User's name: **ICC**
+
+### 3. After Successfully Loading All Files
+
+Respond with:
+```
+✅ Projekt načítaný!
+📊 Status: [current phase from PROJECT_STATUS.md]
+🎯 Progress: [percentage from PROJECT_STATUS.md]
+⚙️ Aktuálny task: [current task from PROJECT_STATUS.md]
+
+Čo robíme?
+```
+
+### 4. ALWAYS Check Status Before Work
+
+Before starting ANY work:
+- 🔥 **CHECK** PROJECT_STATUS.md for current story/task
+- 🔥 **VERIFY** what was completed in last session
+- 🔥 **ASK** user which task to work on
+- 🔥 **NEVER** assume project structure without checking files
+
+### 5. Git Workflow (After Every Change)
+
+```bash
+git add .
+git commit -m "descriptive message in English"
+git push origin main
+```
+
+**Update documentation after EVERY session:**
+- Update PROJECT_STATUS.md with progress
+- Create session note in docs/sessions/YYYY-MM-DD-description.md
+- Update project_file_access.json if files added/removed
+- Commit and push all changes
+
+**GitHub Repository:**
 ```
 URL: https://github.com/rauschiccsk/project-generator
 Branch: main
-Local: c:\Development\project-generator
-```
-
-### Overview
-- **Project:** Project Generator
-- **Phase:** Initial Setup Complete
-- **Overall Progress:** 16% (Task 1.1 complete, 1/12 tasks in STORY 1)
-- **Active Story:** STORY 1 - Core Generator
-- **Last Session:** 2025-10-20
-- **Next Milestone:** Task 1.2 - Pydantic Models
-
-### Recent Achievements
-- ✅ 2025-10-20: Project structure created
-- ✅ 2025-10-20: Git repository initialized
-- ✅ 2025-10-20: GitHub repository created (rauschiccsk/project-generator)
-- ✅ 2025-10-20: Complete documentation created
-- ✅ 2025-10-20: Configuration system designed (YAML)
-- ✅ 2025-10-20: File access generator created
-- ✅ 2025-10-20: Single-URL loading verified
-
-### Active Tasks
-- [x] **STORY 1 Task 1.1** - Project setup and documentation ✅ COMPLETE
-- [ ] **STORY 1 Task 1.2** - Pydantic models (ProjectConfig) ← NEXT
-- [ ] **STORY 1 Task 1.3** - YAML config parser
-
-### Progress: STORY 1 - Core Generator
-```
-[██░░░░░░░░░░] 16% (2/12 tasks)
-
-✅ 1.1 - Project setup and documentation
-⏳ 1.2 - Pydantic models (ProjectConfig)
-⏳ 1.3 - YAML config parser
-⏳ 1.4 - Template engine (Jinja2)
-⏳ 1.5 - File generator logic
-⏳ 1.6 - Git operations wrapper
-⏳ 1.7 - GitHub API client
-⏳ 1.8 - Input validators
-⏳ 1.9 - Main project_creator.py
-⏳ 1.10 - Unit tests (80%+ coverage)
-⏳ 1.11 - Integration testing
-⏳ 1.12 - Documentation finalization
+Local path: c:\Development\project-generator
 ```
 
 ---
 
 ## 🎯 PROJECT OVERVIEW
 
-### Problem
-- Creating a new project takes **3+ hours**
-- Dozens of commits for basic setup
-- Repetitive work (docs/, git, config, templates)
-- Inconsistent structure between projects
+### Problém
+- Tvorba nového projektu trvá **3+ hodiny**
+- Desiatky commitov pre základný setup
+- Repetitívna práca (docs/, git, config, templates)
+- Nekonzistentná štruktúra medzi projektami
 
-### Solution
-**Project Generator** - automated tool that creates in **30 seconds**:
-- ✅ Complete Python project with documentation
+### Riešenie
+**Project Generator** - automatizovaný nástroj, ktorý za **30 sekúnd** vytvorí:
+- ✅ Kompletný Python projekt s dokumentáciou
 - ✅ GitHub repository
-- ✅ Git initialization + first commit
-- ✅ Raw URL ready for Claude
-- ✅ All necessary config files
+- ✅ Git inicializácia + prvý commit
+- ✅ Raw URL ready pre Claude
+- ✅ Všetky potrebné config súbory
 
 ### Workflow
 ```
@@ -98,7 +103,7 @@ YAML config → Python Generator → GitHub repo → Raw URL → ✅ Ready!
 
 ---
 
-## 🏗️ ARCHITECTURE
+## 🏗️ ARCHITEKTÚRA
 
 ### High-Level Design
 
@@ -141,6 +146,23 @@ YAML config → Python Generator → GitHub repo → Raw URL → ✅ Ready!
 └──────────────────────────────┘
 ```
 
+### Optional: n8n Automation
+
+```
+┌──────────────────┐
+│  configs/queue/  │
+│  (YAML dropped)  │
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────────┐
+│  n8n Workflow        │
+│  ├─ File Monitor     │
+│  ├─ Execute Python   │
+│  └─ Email Result     │
+└──────────────────────┘
+```
+
 ---
 
 ## 💾 TECH STACK
@@ -151,22 +173,26 @@ Language: Python 3.11+
 Templating: Jinja2
 Config: YAML (PyYAML)
 Validation: Pydantic
-GitHub API: PyGithub
-Git: GitPython
+GitHub API: requests / PyGithub
 Testing: pytest
 IDE: PyCharm
 ```
 
 ### Dependencies
-```python
-pydantic>=2.5.0       # Data validation
-jinja2>=3.1.2         # Template engine
-pyyaml>=6.0.1         # YAML parsing
-pygithub>=2.1.1       # GitHub API client
-GitPython>=3.1.40     # Git operations
+```
+pydantic>=2.0.0       # Data validation
+jinja2>=3.1.0         # Template engine
+pyyaml>=6.0          # YAML parsing
+pygithub>=2.1.0       # GitHub API client
+requests>=2.31.0      # HTTP client
 python-dotenv>=1.0.0  # Environment variables
-pytest>=7.4.3         # Testing
-black>=23.12.0        # Code formatter
+pytest>=7.4.0         # Testing
+```
+
+### Optional (n8n integration)
+```
+- n8n server (already exists)
+- Email SMTP (Gmail)
 ```
 
 ---
@@ -177,160 +203,251 @@ black>=23.12.0        # Code formatter
 c:\Development\project-generator/
 │
 ├── docs/                                    
-│   ├── FULL_PROJECT_CONTEXT.md            # This file - Single source of truth
-│   ├── project_file_access.json           # Generated file list
-│   ├── architecture/                       # Architecture docs (future)
-│   └── sessions/                           # Session notes (future)
+│   ├── FULL_PROJECT_CONTEXT.md            # This file
+│   ├── SYSTEM_PROMPT.md                   # Claude instructions
+│   ├── MASTER_CONTEXT.md                  # Quick reference
+│   ├── QUICK_START.md                     # Getting started
+│   ├── PROJECT_STATUS.md                  # Development tracking
+│   ├── project_file_access.json           # GitHub files manifest
+│   ├── architecture/
+│   │   ├── system-overview.md
+│   │   ├── n8n-workflow.md
+│   │   └── template-system.md
+│   ├── sessions/
+│   │   └── 2025-10-20-initial-setup.md
+│   └── templates/                          
+│       ├── FULL_PROJECT_CONTEXT_template.md
+│       ├── PROJECT_STATUS_template.md
+│       └── README_template.md
 │
 ├── src/                                     
 │   ├── __init__.py
 │   ├── generator/                           
 │   │   ├── __init__.py
-│   │   ├── project_creator.py             # Main logic (TODO)
-│   │   ├── template_engine.py             # Jinja2 renderer (TODO)
-│   │   ├── github_client.py               # GitHub API (TODO)
-│   │   └── validators.py                  # Input validation (TODO)
+│   │   ├── project_creator.py             # Main logic
+│   │   ├── template_engine.py             # Jinja2 renderer
+│   │   ├── github_client.py               # GitHub API
+│   │   └── validators.py                  # Input validation
 │   │
 │   ├── models/                              
 │   │   ├── __init__.py
-│   │   └── project_config.py              # Pydantic models (TODO)
+│   │   └── project_config.py              # Pydantic models
 │   │
-│   └── templates/                           # Jinja2 templates (TODO)
+│   └── templates/                           # Jinja2 templates
 │       ├── project_files/
+│       │   ├── full_context.md.j2
+│       │   ├── project_status.md.j2
+│       │   ├── readme.md.j2
+│       │   ├── requirements.txt.j2
+│       │   └── gitignore.j2
+│       │
 │       └── docs_structure/
+│           ├── architecture_readme.md.j2
+│           ├── session_template.md.j2
+│           └── adr_template.md.j2
+│
+├── n8n_workflows/                           
+│   └── project-init-webhook.json
 │
 ├── tests/                                   
 │   ├── __init__.py
+│   ├── test_project_creator.py
+│   ├── test_template_engine.py
+│   ├── test_github_client.py
 │   └── fixtures/
+│       └── sample_config.yaml
 │
 ├── scripts/                                 
-│   └── generate_project_access.py         # ✅ Complete
+│   ├── generate_project_access.py         
+│   └── validate_templates.py              
 │
 ├── configs/                                 
-│   ├── config_template.yaml               # ✅ Complete
+│   ├── config_template.yaml               # Template for new projects
 │   ├── examples/
-│   │   ├── monastier_online.yaml          # ✅ Complete
-│   │   └── supplier_invoice.yaml          # ✅ Complete
-│   ├── queue/                             
-│   └── processed/                         
+│   │   ├── monastier_online.yaml
+│   │   └── supplier_invoice.yaml
+│   ├── queue/                             # n8n monitor (optional)
+│   ├── processed/                         # Processed configs
+│   └── github_credentials.yaml.template
 │
-├── .gitignore                              # ✅ Complete
-├── .env.template                           # ✅ Complete
-├── requirements.txt                        # ✅ Complete
-├── README.md                               # ✅ Complete
-└── LICENSE                                 # TODO
+├── examples/                                
+│   └── example_generated_project/
+│
+├── .gitignore
+├── .env.template
+├── requirements.txt
+├── README.md
+├── CHANGELOG.md
+└── LICENSE
 ```
 
 ---
 
 ## 📝 YAML CONFIG FORMAT
 
-### Example Configuration
+### Example: configs/config_template.yaml
 
 ```yaml
 # ===================================
 # PROJECT GENERATOR - Configuration
 # ===================================
 
+# === BASIC INFO ===
 project:
   name: "My New Project"
   slug: "my-new-project"
   description: "Brief description of the project"
   
+# === GITHUB ===
 github:
   username: "rauschiccsk"
   repo_name: "my-new-project"
-  visibility: "private"
+  visibility: "private"  # "public" or "private"
   
+# === DEVELOPER ===
 developer:
   name: "ICC"
   email: "rausch@icc.sk"
   
+# === PATHS ===
 paths:
   local_dev: "c:\\Development\\my-new-project"
+  local_deploy: ""  # Optional
   
+# === TECH STACK ===
 tech_stack:
-  backend: ["fastapi", "sqlalchemy"]
-  frontend: ["jinja2", "tailwindcss"]
-  databases: ["postgresql", "redis"]
-  automation: ["n8n"]
+  backend:
+    - "fastapi"
+    - "sqlalchemy"
+  frontend:
+    - "jinja2"
+    - "tailwindcss"
+  databases:
+    - "postgresql"
+    - "redis"
+  automation:
+    - "n8n"
     
+# === OPTIONAL INFO ===
+optional:
+  domain: ""  # e.g., "myproject.com"
+  contact_email: ""
+  
+# === FEATURES ===
 features:
   include_auth: true
   include_api_docs: true
   include_tests: true
   include_docker: false
+  include_cicd: false
 ```
-
-Full template: `configs/config_template.yaml`
 
 ---
 
-## 🚀 USAGE (FUTURE)
+## 🚀 USAGE
 
-### Planned Usage
+### Basic Usage
 
 ```bash
 # 1. Copy template
 cp configs/config_template.yaml configs/my_project.yaml
 
-# 2. Edit config
+# 2. Edit YAML file (fill in your project details)
 notepad configs/my_project.yaml
 
-# 3. Generate project
+# 3. Run generator
 python src/generator/project_creator.py --config configs/my_project.yaml
 
-# 4. Output
-✅ Project created in ~30 seconds
-📁 Local: c:\Development\my-new-project
-🔗 GitHub: https://github.com/user/my-new-project
+# 4. Wait ~30 seconds...
+
+# 5. Output:
+✅ Projekt "My New Project" vytvorený!
+📁 Path: c:\Development\my-new-project
+🔗 GitHub: https://github.com/rauschiccsk/my-new-project
 📄 Raw URL: https://raw.githubusercontent.com/.../FULL_PROJECT_CONTEXT.md
+⏱️ Time: 28.3s
 ```
+
+### Programmatic Usage
+
+```python
+from pathlib import Path
+from src.generator.project_creator import ProjectCreator
+
+# Load config and create project
+creator = ProjectCreator(Path("configs/my_project.yaml"))
+result = creator.create_project()
+
+if result.success:
+    print(f"✅ Project created: {result.github_url}")
+else:
+    print(f"❌ Error: {result.error_message}")
+```
+
+---
+
+## 🎯 GENERATED FILES
+
+Every generated project will contain:
+
+### Documentation
+- `docs/FULL_PROJECT_CONTEXT.md` - Single source of truth
+- `docs/PROJECT_STATUS.md` - Development tracking
+- `docs/project_file_access.json` - GitHub files manifest
+- `docs/architecture/` - Architecture docs
+- `docs/sessions/` - Session notes template
+- `README.md` - Project overview
+
+### Python Code
+- `src/main.py` - FastAPI application skeleton
+- `src/config.py` - Configuration management
+- `src/database.py` - Database connection
+- `src/models/` - Pydantic models
+- `src/api/` - API routes
+
+### Configuration
+- `requirements.txt` - Python dependencies
+- `.gitignore` - Git ignore patterns
+- `.env.template` - Environment variables template
+- `config/config_template.py` - Config template
+
+### Testing
+- `tests/conftest.py` - pytest fixtures
+- `tests/test_main.py` - Sample tests
 
 ---
 
 ## 🔐 ENVIRONMENT VARIABLES
 
-### .env Configuration
+### .env file
 
 ```bash
 # GitHub API
-GITHUB_TOKEN=github_pat_xxxxxxxxxxxxx
+GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxx
 GITHUB_USERNAME=rauschiccsk
 
-# Paths
-DEV_ROOT=c:\Development
-DEPLOY_ROOT=c:\Deployment
-
-# Email (optional)
+# Email Notifications (optional)
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=automation@isnex.ai
 SMTP_PASSWORD=xxxxxxxxxxxx
-```
+SMTP_FROM=automation@isnex.ai
 
-Template: `.env.template`
+# Paths
+DEV_ROOT=c:\Development
+DEPLOY_ROOT=c:\Deployment
+```
 
 ---
 
 ## 📊 DEVELOPMENT ROADMAP
 
-### STORY 1: Core Generator ⚙️ (In Progress - 16%)
+### STORY 1: Core Generator ⚙️ (Current)
 **Priority:** CRITICAL  
 **Estimated:** 2 weeks  
-**Status:** 🔄 Task 1.1 complete, Task 1.2 next
 
-**Completed:**
 - [x] 1.1 - Project setup and documentation ✅
-
-**Next Up:**
 - [ ] 1.2 - Pydantic models (ProjectConfig)
-  - Create `src/models/project_config.py`
-  - ProjectConfig, TechStack, ProjectFeatures classes
-  - Validation rules
-  - Unit tests
-
-**Remaining:**
 - [ ] 1.3 - YAML config parser
 - [ ] 1.4 - Template engine (Jinja2)
 - [ ] 1.5 - File generator logic
@@ -344,178 +461,120 @@ Template: `.env.template`
 
 ### STORY 2: n8n Integration 🤖
 **Priority:** MEDIUM  
-**Status:** ⏳ Planned  
-**Depends On:** STORY 1
+**Estimated:** 3-5 days  
+
+- [ ] 2.1 - File monitor workflow
+- [ ] 2.2 - Python executor node
+- [ ] 2.3 - Email notifications
+- [ ] 2.4 - Error handling
+- [ ] 2.5 - Testing
 
 ### STORY 3: Advanced Features 🚀
 **Priority:** LOW  
-**Status:** ⏳ Planned  
-**Depends On:** STORY 1, STORY 2
+**Estimated:** 1 week  
+
+- [ ] 3.1 - CLI interface (Click/Typer)
+- [ ] 3.2 - Custom templates support
+- [ ] 3.3 - Template validation
+- [ ] 3.4 - Progress indicators
+- [ ] 3.5 - Dry-run mode
 
 ---
 
 ## 🔧 TECHNICAL DECISIONS
 
-### Key Design Choices
+### Why YAML over JSON?
+- ✅ Human-readable
+- ✅ Comments support
+- ✅ Less verbose
+- ✅ Standard for configs
 
-**YAML vs JSON:**
-- ✅ Human-readable, comments support
-- ✅ Less verbose than JSON
-- ✅ Standard for configurations
-
-**Jinja2 Templating:**
-- ✅ Powerful, widely used
+### Why Jinja2?
+- ✅ Powerful templating
+- ✅ Widely used
 - ✅ Python native
 - ✅ Good documentation
 
-**PyGithub Library:**
+### Why PyGithub?
 - ✅ Official GitHub client
 - ✅ High-level API
 - ✅ Well maintained
+- ✅ Easy to use
 
-**Pydantic Validation:**
-- ✅ Type safety
-- ✅ Automatic parsing
-- ✅ Clear error messages
+### Why Pydantic?
+- ✅ Type validation
+- ✅ Data parsing
+- ✅ Error messages
 - ✅ FastAPI integration
-
----
-
-## 📞 GITHUB & CONTACT
-
-### Repository Information
-```
-GitHub: https://github.com/rauschiccsk/project-generator
-Branch: main
-Local: c:\Development\project-generator
-```
-
-### Developer
-- **Name:** ICC
-- **Email:** rausch@icc.sk
-- **GitHub:** @rauschiccsk
-
-### Raw URLs
-```
-FULL_PROJECT_CONTEXT.md:
-https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/FULL_PROJECT_CONTEXT.md
-
-project_file_access.json:
-https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/project_file_access.json
-```
 
 ---
 
 ## ⚠️ CRITICAL REMINDERS
 
 ### For Every New Chat:
-1. 🔥 Load this document using the raw URL above
-2. 🔥 Check CURRENT PROJECT STATUS section
-3. 🔥 Never assume project structure without checking
-4. 🔥 Always commit + push after completing work
-5. 🔥 Update this document when making significant changes
+1. 🔥 **ALWAYS** load GitHub files first (use web_fetch)
+2. 🔥 **NEVER** assume project structure
+3. 🔥 **ALWAYS** check PROJECT_STATUS.md
+4. 🔥 **ALWAYS** commit + push after work
+5. 🔥 **ALWAYS** update session notes
+6. 🔥 **COMMUNICATE** in Slovak language
 
-### Git Workflow:
+### Git Rules:
 - ✅ Commit often, small changes
 - ✅ Descriptive commit messages
 - ✅ Test before commit
 - ✅ Pull before push
+- ✅ Feature branches for new features
 
 ### Code Standards:
 - ✅ PEP 8 style guide
 - ✅ Type hints everywhere
 - ✅ Docstrings for all functions
-- ✅ Slovak comments for business logic
+- ✅ Comments in Slovak for business logic
 - ✅ English variable/function names
 
 ---
 
 ## ✅ SUCCESS CRITERIA
 
-### MVP Goals
-- ✅ Single command creates complete project
-- ✅ GitHub repository auto-created
-- ✅ Raw URL functional for Claude
+### MVP (Minimum Viable Product)
+- ✅ Single command creates full project
+- ✅ All template files generated
+- ✅ GitHub repository created automatically
+- ✅ Raw URL functional
 - ✅ Generation time < 60 seconds
-- ✅ Zero manual steps
+- ✅ Zero manual steps after execution
 
-### V1.0 Goals
-- ✅ All STORY 1 tasks complete
-- ✅ 80%+ test coverage
+### V1.0 Release
+- ✅ n8n webhook integration
+- ✅ Email notifications
+- ✅ Error handling
+- ✅ Input validation
+- ✅ Unit tests 80%+
 - ✅ Complete documentation
-- ✅ Production ready
+
+---
+
+## 📞 CONTACT
+
+- **Developer:** ICC (rausch@icc.sk)
+- **GitHub:** https://github.com/rauschiccsk/project-generator
+- **Local Path:** c:\Development\project-generator
 
 ---
 
 ## 🎓 INSPIRATION
 
-Based on successful patterns from:
-- **supplier_invoice_loader** - Multi-customer architecture, single-URL loading
-- **orthodox-portal** - Documentation structure, project organization
-
-Both projects proved the "one raw URL for Claude" workflow.
-
----
-
-## 📝 LATEST SESSION NOTES
-
-### Session: 2025-10-20 - Initial Setup
-
-**Duration:** ~2 hours  
-**Focus:** Project foundation and documentation
-
-**Completed:**
-- ✅ Project structure created
-- ✅ Git initialized and first commit
-- ✅ GitHub repository created
-- ✅ Complete documentation written
-- ✅ YAML configuration system designed
-- ✅ File access generator script created
-- ✅ Single-URL loading pattern implemented
-- ✅ All basic files committed and pushed
-
-**Key Decisions:**
-- Use YAML for configuration (human-readable)
-- Pydantic for validation (type safety)
-- Jinja2 for templating (powerful, standard)
-- Single FULL_PROJECT_CONTEXT.md (no multi-file loading)
-
-**Next Session:**
-- Start Task 1.2: Pydantic models
-- Create `src/models/project_config.py`
-- Define ProjectConfig data model
-- Add validation rules
-- Write unit tests
-
----
-
-## 🔗 QUICK FILE LOCATIONS
-
-### Documentation
-- This file: `docs/FULL_PROJECT_CONTEXT.md`
-- File listing: `docs/project_file_access.json`
-
-### Configuration
-- Template: `configs/config_template.yaml`
-- Examples: `configs/examples/`
-
-### Source Code (TODO)
-- Models: `src/models/project_config.py`
-- Generator: `src/generator/project_creator.py`
-- Templates: `src/templates/`
-
-### Tests (TODO)
-- Unit tests: `tests/`
-
-### Scripts
-- File generator: `scripts/generate_project_access.py` ✅
+This project is based on successful patterns from:
+- **supplier_invoice_loader** - Multi-customer architecture
+- **orthodox-portal** - Documentation structure
+- Both projects have proven the "single raw URL" workflow
 
 ---
 
 **Document Version:** 0.1.0  
 **Created:** 2025-10-20  
-**Last Updated:** 2025-10-20  
-**Status:** Active Development - Task 1.1 Complete  
-**Next Task:** 1.2 - Pydantic Models
+**Status:** Active Development - Initial Setup  
+**Next Session:** STORY 1.2 - Pydantic Models
 
-🏭 **One URL. Complete Project. Ready to Build.**
+🏭 **Let's automate project creation!**
