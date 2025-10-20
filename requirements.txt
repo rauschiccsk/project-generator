@@ -3,6 +3,7 @@
 
 # Core Dependencies
 pydantic>=2.5.0              # Data validation and settings management
+email-validator>=2.1.0       # Email validation for Pydantic
 jinja2>=3.1.2                # Template engine
 pyyaml>=6.0.1                # YAML parsing
 python-dotenv>=1.0.0         # Environment variables management
