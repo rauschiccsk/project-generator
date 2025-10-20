@@ -26,6 +26,13 @@ https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/FULL_P
 
 ## 📊 CURRENT PROJECT STATUS
 
+### GitHub Repository
+```
+URL: https://github.com/rauschiccsk/project-generator
+Branch: main
+Local: c:\Development\project-generator
+```
+
 ### Overview
 - **Project:** Project Generator
 - **Phase:** Initial Setup Complete
