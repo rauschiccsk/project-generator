@@ -5,10 +5,11 @@ Tento modul obsahuje všetky potrebné modely pre parsovanie a validáciu
 YAML konfigurácie nového projektu.
 """
 
-from typing import Optional, List
+from typing import Optional, List, Union
 from pathlib import Path
 from pydantic import BaseModel, Field, field_validator, EmailStr
 import re
+import yaml
 
 
 class ProjectInfo(BaseModel):
@@ -261,6 +262,7 @@ class ProjectConfig(BaseModel):
         """Pydantic konfigurácia."""
         str_strip_whitespace = True  # Automaticky trim whitespace
         validate_assignment = True  # Validuj aj pri assignment
+        extra = "ignore"  # Ignoruj extra polia v YAML
 
     def get_full_github_url(self) -> str:
         """Získaj plnú GitHub URL repository."""
@@ -276,3 +278,103 @@ class ProjectConfig(BaseModel):
             f"https://raw.githubusercontent.com/"
             f"{self.github.username}/{self.github.repo_name}/main"
         )
+
+    @classmethod
+    def from_yaml(cls, yaml_path: Union[str, Path]) -> "ProjectConfig":
+        """
+        Načíta ProjectConfig z YAML súboru.
+
+        Args:
+            yaml_path: Cesta k YAML súboru (str alebo Path objekt)
+
+        Returns:
+            ProjectConfig objekt
+
+        Raises:
+            FileNotFoundError: Ak YAML súbor neexistuje
+            yaml.YAMLError: Ak YAML má neplatnú syntax
+            ValueError: Ak YAML dáta neprechádzajú Pydantic validáciou
+
+        Example:
+            >>> config = ProjectConfig.from_yaml("configs/moj_projekt.yaml")
+            >>> print(config.project.name)
+            Môj Nový Projekt
+        """
+        # Konvertuj na Path objekt ak je to string
+        if isinstance(yaml_path, str):
+            yaml_path = Path(yaml_path)
+
+        # Skontroluj existenciu súboru
+        if not yaml_path.exists():
+            raise FileNotFoundError(
+                f"YAML konfiguračný súbor nebol nájdený: {yaml_path}"
+            )
+
+        # Načítaj a parsuj YAML
+        try:
+            with open(yaml_path, 'r', encoding='utf-8') as f:
+                data = yaml.safe_load(f)
+        except yaml.YAMLError as e:
+            raise yaml.YAMLError(
+                f"Chyba pri parsovaní YAML súboru {yaml_path}: {str(e)}"
+            )
+
+        # Skontroluj či YAML obsahuje dáta
+        if data is None:
+            raise ValueError(
+                f"YAML súbor je prázdny alebo neobsahuje validné dáta: {yaml_path}"
+            )
+
+        # Vytvor ProjectConfig pomocou Pydantic validácie
+        try:
+            return cls(**data)
+        except Exception as e:
+            raise ValueError(
+                f"Chyba pri validácii YAML konfigurácie: {str(e)}"
+            )
+
+    def to_yaml(self, output_path: Union[str, Path]) -> None:
+        """
+        Uloží ProjectConfig do YAML súboru.
+
+        Args:
+            output_path: Cesta kam uložiť YAML súbor
+
+        Raises:
+            IOError: Ak sa nepodarí zapísať súbor
+
+        Example:
+            >>> config = ProjectConfig(...)
+            >>> config.to_yaml("configs/export.yaml")
+        """
+        if isinstance(output_path, str):
+            output_path = Path(output_path)
+
+        # Vytvor priečinok ak neexistuje
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+
+        # Konvertuj model na dict a ulož ako YAML
+        data = self.model_dump(mode='json', exclude_none=True)
+
+        with open(output_path, 'w', encoding='utf-8') as f:
+            yaml.dump(
+                data,
+                f,
+                default_flow_style=False,
+                allow_unicode=True,
+                sort_keys=False
+            )
+
+    def to_dict(self) -> dict:
+        """
+        Konvertuje ProjectConfig na dictionary.
+
+        Returns:
+            Dictionary reprezentácia konfigurácie
+
+        Example:
+            >>> config = ProjectConfig.from_yaml("config.yaml")
+            >>> data = config.to_dict()
+            >>> print(data['project']['name'])
+        """
+        return self.model_dump(mode='json', exclude_none=True)

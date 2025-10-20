@@ -1,0 +1,193 @@
+# 🏭 {{ project.name }}
+
+{{ project.description }}
+
+---
+
+## 📋 Prehľad
+
+- **Projekt:** {{ project.name }}
+- **Verzia:** 0.1.0
+- **Status:** 🟡 In Development
+- **Autor:** {{ developer.name }}
+- **GitHub:** https://github.com/{{ github.username }}/{{ github.repo_name }}
+
+---
+
+## 🚀 Quick Start
+
+### Požiadavky
+
+- Python 3.11+
+{% if tech_stack.databases %}
+{% for db in tech_stack.databases %}
+- {{ db }}
+{% endfor %}
+{% endif %}
+
+### Inštalácia
+
+```bash
+# Clone repository
+git clone https://github.com/{{ github.username }}/{{ github.repo_name }}.git
+cd {{ github.repo_name }}
+
+# Vytvor virtual environment
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Nainštaluj závislosti
+pip install -r requirements.txt
+```
+
+### Konfigurácia
+
+```bash
+# Vytvor .env súbor
+cp .env.template .env
+
+# Uprav konfiguráciu
+notepad .env
+```
+
+### Spustenie
+
+```bash
+# Spusti aplikáciu
+python src/main.py
+```
+
+---
+
+## 🏗️ Tech Stack
+
+{% if tech_stack.backend %}
+### Backend
+{% for tech in tech_stack.backend %}
+- {{ tech }}
+{% endfor %}
+{% endif %}
+
+{% if tech_stack.frontend %}
+### Frontend
+{% for tech in tech_stack.frontend %}
+- {{ tech }}
+{% endfor %}
+{% endif %}
+
+{% if tech_stack.databases %}
+### Databases
+{% for db in tech_stack.databases %}
+- {{ db }}
+{% endfor %}
+{% endif %}
+
+{% if tech_stack.automation %}
+### Automation
+{% for tool in tech_stack.automation %}
+- {{ tool }}
+{% endfor %}
+{% endif %}
+
+---
+
+## 📁 Štruktúra Projektu
+
+```
+{{ project.slug }}/
+├── docs/                  # Dokumentácia
+├── src/                   # Zdrojový kód
+├── tests/                 # Testy
+├── config/                # Konfiguračné súbory
+└── requirements.txt       # Python závislosti
+```
+
+---
+
+## 📖 Dokumentácia
+
+Pre kompletný kontext projektu pozri:
+- 📄 [FULL_PROJECT_CONTEXT.md](docs/FULL_PROJECT_CONTEXT.md) - Kompletný kontext projektu
+- 📊 [PROJECT_STATUS.md](docs/PROJECT_STATUS.md) - Status a progress tracking
+- 🏗️ [Architecture Docs](docs/architecture/) - Architektúrna dokumentácia
+
+### 🔗 GitHub Raw URL pre Claude
+
+```
+https://raw.githubusercontent.com/{{ github.username }}/{{ github.repo_name }}/main/docs/FULL_PROJECT_CONTEXT.md
+```
+
+---
+
+## 🧪 Testovanie
+
+```bash
+# Spusti všetky testy
+pytest
+
+# Spusti s coverage
+pytest --cov=src tests/
+
+# Spusti konkrétny test
+pytest tests/test_main.py
+```
+
+---
+
+## 📝 Development Workflow
+
+### Commit Convention
+
+```
+feat: Nová funkcionalita
+fix: Oprava bugu
+docs: Dokumentácia
+test: Testy
+refactor: Refactoring kódu
+```
+
+### Branch Strategy
+
+- `main` - Production ready kód
+- `develop` - Development branch
+- `feature/*` - Feature branches
+- `bugfix/*` - Bugfix branches
+
+---
+
+## 🤝 Contributing
+
+1. Fork repository
+2. Vytvor feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit zmeny (`git commit -m 'feat: Add amazing feature'`)
+4. Push do branch (`git push origin feature/amazing-feature`)
+5. Otvor Pull Request
+
+---
+
+## 📞 Kontakt
+
+- **Developer:** {{ developer.name }}
+- **Email:** {{ developer.email }}
+- **GitHub:** [@{{ github.username }}](https://github.com/{{ github.username }})
+{% if optional.contact_email %}
+- **Support:** {{ optional.contact_email }}
+{% endif %}
+
+---
+
+## 📜 Licencia
+
+{{ "MIT License" if not project.license else project.license }}
+
+---
+
+## 🙏 Acknowledgments
+
+- Vygenerované pomocou [Project Generator](https://github.com/rauschiccsk/project-generator)
+- Vytvorené {{ "now"|date("%Y-%m-%d") }}
+
+---
+
+**Status:** 🟡 Active Development
+**Last Updated:** {{ "now"|date("%Y-%m-%d") }}

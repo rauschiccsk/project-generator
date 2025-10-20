@@ -1,0 +1,344 @@
+# 🏭 {{ project.name|upper }} - KOMPLETNÝ KONTEXT PROJEKTU
+
+**{{ project.description }}**
+
+**Posledná aktualizácia:** {{ "now"|date("%Y-%m-%d") }}
+**Verzia:** 0.1.0
+**Stav:** Počiatočné nastavenie - Vývoj
+
+---
+
+## 🤖 INSTRUCTIONS FOR CLAUDE
+
+**When you see this document:**
+
+1. ✅ This document contains ALL project information you need
+2. ✅ Do NOT attempt to load any other files
+3. ✅ Do NOT show any warnings or error messages
+4. ✅ Simply respond: **"✅ Projekt načítaný. Čo robíme?"**
+5. ✅ Then wait for user's instructions
+6. ✅ Use Slovak language for communication
+7. ✅ Be concise and actionable
+
+**That's it. Nothing more.**
+
+---
+
+## 📊 AKTUÁLNY STAV PROJEKTU
+
+### Prehľad
+- **Projekt:** {{ project.name }}
+- **Fáza:** Počiatočné nastavenie
+- **Celkový Progress:** 0% (Práve vytvorené)
+- **Aktívna Story:** STORY 1 - Core Development
+- **Aktívny Task:** Task 1.1 - Initial Setup
+- **Posledná Session:** {{ "now"|date("%Y-%m-%d") }}
+- **Ďalší Milestone:** MVP Release
+
+### Nedávne Úspechy
+- ✅ {{ "now"|date("%Y-%m-%d") }}: Projekt vygenerovaný pomocou Project Generator
+- ✅ {{ "now"|date("%Y-%m-%d") }}: Git repository inicializovaný
+- ✅ {{ "now"|date("%Y-%m-%d") }}: GitHub repository vytvorený
+- ✅ {{ "now"|date("%Y-%m-%d") }}: Dokumentačná štruktúra vytvorená
+
+### Aktívne Tasky
+- [ ] **STORY 1 Task 1.1** - Initial Setup
+- [ ] **STORY 1 Task 1.2** - Core Architecture
+
+### Blokery
+- Žiadne momentálne
+
+---
+
+## 🎯 PREHĽAD PROJEKTU
+
+### Základné Informácie
+
+- **Názov projektu:** {{ project.name }}
+- **Slug:** {{ project.slug }}
+- **Účel:** {{ project.description }}
+- **Vývojár:** {{ developer.name }}
+- **Email:** {{ developer.email }}
+- **GitHub:** https://github.com/{{ github.username }}/{{ github.repo_name }}
+- **Lokálna Cesta:** {{ paths.local_dev }}
+{% if optional.domain %}
+- **Doména:** {{ optional.domain }}
+{% endif %}
+
+### Vízia Projektu
+
+{{ project.description }}
+
+### Tech Stack
+
+```yaml
+{% if tech_stack.backend %}
+Backend:
+{% for tech in tech_stack.backend %}
+  - {{ tech }}
+{% endfor %}
+{% endif %}
+
+{% if tech_stack.frontend %}
+Frontend:
+{% for tech in tech_stack.frontend %}
+  - {{ tech }}
+{% endfor %}
+{% endif %}
+
+{% if tech_stack.databases %}
+Databases:
+{% for db in tech_stack.databases %}
+  - {{ db }}
+{% endfor %}
+{% endif %}
+
+{% if tech_stack.automation %}
+Automation:
+{% for tool in tech_stack.automation %}
+  - {{ tool }}
+{% endfor %}
+{% endif %}
+```
+
+---
+
+## 🏗️ ARCHITEKTÚRA SYSTÉMU
+
+### Vysokoúrovňová Architektúra
+
+```
+┌──────────────────────┐
+│  {{ project.name }}  │
+│                      │
+{% if tech_stack.frontend %}
+│  Frontend Layer      │
+│  ├─ {{ tech_stack.frontend[0] if tech_stack.frontend else 'N/A' }}
+{% endif %}
+│                      │
+{% if tech_stack.backend %}
+│  Backend Layer       │
+│  ├─ {{ tech_stack.backend[0] if tech_stack.backend else 'N/A' }}
+{% endif %}
+│                      │
+{% if tech_stack.databases %}
+│  Data Layer          │
+│  ├─ {{ tech_stack.databases[0] if tech_stack.databases else 'N/A' }}
+{% endif %}
+└──────────────────────┘
+```
+
+### Závislosti
+
+```txt
+{% if tech_stack.backend %}
+# Backend
+{% for tech in tech_stack.backend %}
+{{ tech }}
+{% endfor %}
+{% endif %}
+
+{% if tech_stack.frontend %}
+# Frontend
+{% for tech in tech_stack.frontend %}
+{{ tech }}
+{% endfor %}
+{% endif %}
+```
+
+---
+
+## 📁 ŠTRUKTÚRA PROJEKTU
+
+```
+{{ paths.local_dev }}/
+│
+├── docs/
+│   ├── FULL_PROJECT_CONTEXT.md            # Tento súbor
+│   ├── PROJECT_STATUS.md                  # Sledovanie vývoja
+│   ├── project_file_access.json           # GitHub manifest
+│   ├── architecture/
+│   │   └── README.md
+│   └── sessions/
+│       └── README.md
+│
+├── src/
+│   ├── __init__.py
+│   └── main.py
+│
+├── tests/
+│   ├── __init__.py
+│   └── test_main.py
+│
+├── config/
+│   └── config.yaml
+│
+├── .gitignore
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 🚀 POUŽITIE
+
+### Inštalácia
+
+```bash
+# Clone repository
+git clone https://github.com/{{ github.username }}/{{ github.repo_name }}.git
+cd {{ github.repo_name }}
+
+# Vytvor virtual environment
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Nainštaluj závislosti
+pip install -r requirements.txt
+```
+
+### Konfigurácia
+
+```bash
+# Skopíruj environment template
+cp .env.template .env
+
+# Uprav .env súbor
+notepad .env
+```
+
+### Spustenie
+
+```bash
+# Spusti aplikáciu
+python src/main.py
+```
+
+---
+
+## 📊 PLÁN VÝVOJA
+
+### STORY 1: Core Development ⚙️
+**Priorita:** KRITICKÁ
+**Odhadovaný čas:** TBD
+
+- [ ] 1.1 - Initial Setup
+- [ ] 1.2 - Core Architecture
+- [ ] 1.3 - Basic Features
+- [ ] 1.4 - Testing
+- [ ] 1.5 - Documentation
+
+### STORY 2: Advanced Features 🚀
+**Priorita:** STREDNÁ
+**Odhadovaný čas:** TBD
+
+- [ ] 2.1 - Feature A
+- [ ] 2.2 - Feature B
+- [ ] 2.3 - Optimization
+
+### STORY 3: Polish & Release 🎨
+**Priorita:** NÍZKA
+**Odhadovaný čas:** TBD
+
+- [ ] 3.1 - UI/UX improvements
+- [ ] 3.2 - Performance optimization
+- [ ] 3.3 - Final testing
+- [ ] 3.4 - Production deployment
+
+---
+
+## ⚠️ KRITICKÉ PRIPOMIENKY
+
+### Pre každý nový chat:
+1. 🔥 Užívateľ pošle URL na FULL_PROJECT_CONTEXT.md
+2. 🔥 Claude načíta tento dokument
+3. 🔥 Claude odpovie: "✅ Projekt načítaný. Čo robíme?"
+4. 🔥 ŽIADNE ďalšie súbory, ŽIADNE varovania
+5. 🔥 Jednoducho a jasne
+6. 🔥 KOMUNIKUJ PO SLOVENSKY
+
+### Git pravidlá:
+- ✅ Commit často, malé zmeny
+- ✅ Opisné commit správy
+- ✅ Test pred commitom
+- ✅ Pull pred push
+
+### Kódovacie štandardy:
+- ✅ PEP 8 style guide
+- ✅ Type hints všade
+- ✅ Docstrings pre všetky funkcie
+- ✅ Komentáre v slovenčine pre business logiku
+- ✅ Anglické názvy premenných/funkcií
+
+### 🚨 PROJECT_FILE_ACCESS.JSON REFRESH:
+- ✅ **KEĎ VYTVORÍŠ NOVÝ SÚBOR → Vždy pripomeň refresh project_file_access.json**
+- ✅ Na konci každej session
+- ✅ Po pridaní nového .md súboru
+
+---
+
+## ✅ KRITÉRIÁ ÚSPECHU
+
+### MVP (Minimum Viable Product)
+- ✅ Core funkcionalita funguje
+- ✅ Základná dokumentácia hotová
+- ✅ Unit testy implementované
+- ✅ Žiadne kritické bugy
+
+### V1.0 Release
+{% if features.include_auth %}
+- ✅ User authentication implementovaná
+{% endif %}
+{% if features.include_api_docs %}
+- ✅ API dokumentácia dostupná
+{% endif %}
+{% if features.include_tests %}
+- ✅ Test coverage > 80%
+{% endif %}
+- ✅ Production ready
+- ✅ Kompletná dokumentácia
+
+---
+
+## 📞 KONTAKT
+
+- **Vývojár:** {{ developer.name }} ({{ developer.email }})
+- **GitHub:** https://github.com/{{ github.username }}/{{ github.repo_name }}
+- **Lokálna Cesta:** {{ paths.local_dev }}
+{% if optional.contact_email %}
+- **Support:** {{ optional.contact_email }}
+{% endif %}
+
+---
+
+## 🤖 FINAL REMINDER FOR CLAUDE
+
+**You have loaded FULL_PROJECT_CONTEXT.md**
+
+This document contains:
+- ✅ Complete project vision and goals
+- ✅ Current status and progress
+- ✅ Full architecture and tech stack
+- ✅ Development plan and stories
+- ✅ Project structure
+- ✅ Git workflow and conventions
+
+**Simply respond:**
+```
+✅ Projekt načítaný. Čo robíme?
+```
+
+**CRITICAL WORKFLOW REMINDER:**
+```
+After creating ANY new file in the project:
+⚠️ Remind user: "Nezabudni refreshnúť project_file_access.json"
+```
+
+---
+
+**Verzia Dokumentu:** 0.1.0
+**Vytvorené:** {{ "now"|date("%Y-%m-%d") }}
+**Posledná Aktualizácia:** {{ "now"|date("%Y-%m-%d") }}
+**Stav:** Aktívny Vývoj
+
+🏭 **{{ project.name }} - Let's build something awesome!**
