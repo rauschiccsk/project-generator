@@ -12,49 +12,29 @@
 
 **When you see this document:**
 
-1. ✅ This document contains ALL project information you need
-2. ✅ Do NOT attempt to load any other files
+1. ✅ This document contains STATIC project information (vision, architecture, tech stack)
+2. ✅ **IMMEDIATELY fetch PROJECT_STATUS.md for CURRENT state:**
+   - URL: `https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/PROJECT_STATUS.md`
 3. ✅ Do NOT show any warnings or error messages
-4. ✅ Simply respond: **"✅ Projekt načítaný. Čo robíme?"**
-5. ✅ Then wait for user's instructions
-6. ✅ Use Slovak language for communication
-7. ✅ Be concise and actionable
+4. ✅ After loading both files, respond: **"✅ Projekt načítaný. Čo robíme?"**
+5. ✅ Use Slovak language for communication
+6. ✅ Be concise and actionable
 
-**That's it. Nothing more.**
+**CRITICAL:**
+- **PROJECT_STATUS.md** = Single source of truth for current state, progress, active tasks
+- **FULL_PROJECT_CONTEXT.md** = Static project information (this file)
+- Always fetch PROJECT_STATUS.md to get real-time project state
 
 ---
 
-## 📊 AKTUÁLNY STAV PROJEKTU
+## 🔗 REQUIRED FILES
 
-### Prehľad
-- **Projekt:** Project Generator (automatizácia tvorby projektov)
-- **Fáza:** Počiatočné nastavenie
-- **Celkový Progress:** 25% (3/12 taskov v STORY 1)
-- **Aktívna Story:** STORY 1 - Core Generator
-- **Aktívny Task:** Task 1.4 - Template Engine (Jinja2)
-- **Posledná Session:** 2025-10-20
-- **Ďalší Milestone:** STORY 1 Complete (2025-11-09)
+**Auto-load these files when starting:**
 
-### Nedávne Úspechy
-- ✅ 2025-10-20: Git repository inicializovaný
-- ✅ 2025-10-20: GitHub repository vytvorený
-- ✅ 2025-10-20: Dokumentačná štruktúra vytvorená
-- ✅ 2025-10-20: Všetky core dokumenty vytvorené
-- ✅ 2025-10-20: Task 1.1 - Dokumentácia HOTOVÁ
-- ✅ 2025-10-20: Task 1.2 - Pydantic Modely HOTOVÉ
-- ✅ 2025-10-20: Task 1.3 - YAML Config Parser HOTOVÝ
-
-### Aktívne Tasky
-- [x] **STORY 1 Task 1.1** - Dokumentácia ✅ HOTOVO
-- [x] **STORY 1 Task 1.2** - Pydantic modely ✅ HOTOVO
-- [x] **STORY 1 Task 1.3** - YAML Config Parser ✅ HOTOVO
-- [ ] **STORY 1 Task 1.4** - Template Engine (Ďalší)
-
-### Blokery
-- Žiadne momentálne
-
-### Blokery
-- Žiadne momentálne
+| File | Purpose | URL |
+|------|---------|-----|
+| **PROJECT_STATUS.md** | Current state, active tasks, blockers | `https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/PROJECT_STATUS.md` |
+| **project_file_access.json** | File manifest (optional) | `https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/project_file_access.json` |
 
 ---
 
@@ -172,11 +152,11 @@ pytest>=7.4.0         # Testovanie
 c:\Development\project-generator/
 │
 ├── docs/                                    
-│   ├── FULL_PROJECT_CONTEXT.md            # Tento súbor
+│   ├── FULL_PROJECT_CONTEXT.md            # Tento súbor (static info)
+│   ├── PROJECT_STATUS.md                  # Aktuálny stav (SINGLE SOURCE OF TRUTH)
 │   ├── SYSTEM_PROMPT.md                   # Claude inštrukcie
 │   ├── MASTER_CONTEXT.md                  # Rýchla referencia
 │   ├── QUICK_START.md                     # Rýchly štart
-│   ├── PROJECT_STATUS.md                  # Sledovanie vývoja
 │   ├── project_file_access.json           # GitHub manifest
 │   ├── architecture/
 │   │   ├── system-overview.md
@@ -411,42 +391,44 @@ DEPLOY_ROOT=c:\Deployment
 
 ## 📊 PLÁN VÝVOJA
 
-### STORY 1: Core Generator ⚙️ (Aktuálne)
+### STORY 1: Core Generator ⚙️
 **Priorita:** KRITICKÁ  
 **Odhadovaný čas:** 2 týždne  
 
-- [x] 1.1 - Setup projektu a dokumentácia ✅
-- [ ] 1.2 - Pydantic modely (ProjectConfig)
-- [ ] 1.3 - YAML config parser
-- [ ] 1.4 - Template engine (Jinja2)
-- [ ] 1.5 - File generator logika
-- [ ] 1.6 - Git operations wrapper
-- [ ] 1.7 - GitHub API klient
-- [ ] 1.8 - Input validátory
-- [ ] 1.9 - Hlavný project_creator.py
-- [ ] 1.10 - Unit testy (80%+ pokrytie)
-- [ ] 1.11 - Integračné testovanie
-- [ ] 1.12 - Finalizácia dokumentácie
+1. Setup projektu a dokumentácia
+2. Pydantic modely (ProjectConfig)
+3. YAML config parser
+4. Template engine (Jinja2)
+5. File generator logika
+6. Git operations wrapper
+7. GitHub API klient
+8. Input validátory
+9. Hlavný project_creator.py
+10. Unit testy (80%+ pokrytie)
+11. Integračné testovanie
+12. Finalizácia dokumentácie
 
 ### STORY 2: n8n Integrácia 🤖
 **Priorita:** STREDNÁ  
 **Odhadovaný čas:** 3-5 dní  
 
-- [ ] 2.1 - File monitor workflow
-- [ ] 2.2 - Python executor node
-- [ ] 2.3 - Email notifikácie
-- [ ] 2.4 - Error handling
-- [ ] 2.5 - Testovanie
+1. File monitor workflow
+2. Python executor node
+3. Email notifikácie
+4. Error handling
+5. Testovanie
 
 ### STORY 3: Pokročilé Features 🚀
 **Priorita:** NÍZKA  
 **Odhadovaný čas:** 1 týždeň  
 
-- [ ] 3.1 - CLI interface (Click/Typer)
-- [ ] 3.2 - Podpora vlastných šablón
-- [ ] 3.3 - Validácia šablón
-- [ ] 3.4 - Progress indikátory
-- [ ] 3.5 - Dry-run mód
+1. CLI interface (Click/Typer)
+2. Podpora vlastných šablón
+3. Validácia šablón
+4. Progress indikátory
+5. Dry-run mód
+
+**→ Pre aktuálny progress a aktívne tasky pozri PROJECT_STATUS.md**
 
 ---
 
@@ -483,10 +465,11 @@ DEPLOY_ROOT=c:\Deployment
 ### Pre každý nový chat:
 1. 🔥 Užívateľ pošle URL na FULL_PROJECT_CONTEXT.md
 2. 🔥 Claude načíta tento dokument
-3. 🔥 Claude odpovie: "✅ Projekt načítaný. Čo robíme?"
-4. 🔥 ŽIADNE ďalšie súbory, ŽIADNE varovania
-5. 🔥 Jednoducho a jasne
-6. 🔥 KOMUNIKUJ PO SLOVENSKY
+3. 🔥 Claude AUTOMATICKY načíta PROJECT_STATUS.md
+4. 🔥 Claude odpovie: "✅ Projekt načítaný. Čo robíme?"
+5. 🔥 ŽIADNE ďalšie súbory, ŽIADNE varovania
+6. 🔥 Jednoducho a jasne
+7. 🔥 KOMUNIKUJ PO SLOVENSKY
 
 ### Git pravidlá:
 - ✅ Commit často, malé zmeny
@@ -512,7 +495,7 @@ DEPLOY_ROOT=c:\Deployment
 
 ### Workflow po zmene súborov:
 1. Commitni zmeny
-2. Updatni PROJECT_STATUS.md
+2. Updatni PROJECT_STATUS.md (ak potrebné)
 3. **Pripomeň project_file_access.json refresh ak vznikli nové súbory**
 4. Push na GitHub
 
@@ -561,19 +544,22 @@ Tento projekt je založený na úspešných vzoroch z:
 
 This document contains:
 - ✅ Complete project vision and goals
-- ✅ Current status and progress (8% - Initial Setup)
 - ✅ Full architecture and tech stack
-- ✅ All 3 stories and development plan
+- ✅ All 3 stories and development plan (static info)
 - ✅ Project structure
 - ✅ Git workflow and commit conventions
 - ✅ Technical decisions
 
-**Simply respond:**
+**CRITICAL: For current status, progress, and active tasks:**
+- ✅ **Fetch PROJECT_STATUS.md immediately**
+- ✅ URL: `https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/PROJECT_STATUS.md`
+
+**After loading both files, simply respond:**
 ```
 ✅ Projekt načítaný. Čo robíme?
 ```
 
-**CRITICAL WORKFLOW REMINDER:**
+**WORKFLOW REMINDER:**
 ```
 After creating ANY new file in the project:
 ⚠️ Remind user: "Nezabudni refreshnúť project_file_access.json"
@@ -583,7 +569,7 @@ This ensures multi-file context loading works in future chats.
 
 ---
 
-**Verzia Dokumentu:** 0.1.0  
+**Verzia Dokumentu:** 0.2.0  
 **Vytvorené:** 2025-10-20  
 **Posledná Aktualizácia:** 2025-10-20  
 **Stav:** Aktívny Vývoj  
