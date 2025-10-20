@@ -1,349 +1,303 @@
 # 📊 PROJECT STATUS - Project Generator
 
-**Sledovanie Vývoja v Reálnom Čase**
+**Posledná aktualizácia:** 2025-10-20  
+**Verzia:** 0.1.0  
+**Aktuálna Fáza:** Vývoj - STORY 1
 
 ---
 
-## 🎯 Aktuálny Stav
+## 🎯 AKTUÁLNY STAV
 
-| Metrika | Hodnota |
-|--------|-------|
-| **Verzia** | 0.1.0 |
-| **Fáza** | Počiatočný Setup / Story 1 |
-| **Progress** | 8% |
-| **Aktuálna Story** | STORY 1: Core Generator |
-| **Aktuálny Task** | 1.1 - Dokumentácia Setup ✅ |
-| **Ďalší Task** | 1.2 - Pydantic Modely |
-| **Cieľové Vydanie** | MVP za 2 týždne |
-| **Posledná Aktualizácia** | 2025-10-20 |
+### Prehľad
+- **Aktívna Story:** STORY 1 - Core Generator
+- **Progress STORY 1:** 25% (3/12 taskov)
+- **Celkový Progress:** 25% (STORY 1 len začatá)
+- **Aktívny Task:** Task 1.4 - Template Engine (Jinja2)
+- **Ďalší Milestone:** STORY 1 Complete (2025-11-09)
 
----
-
-## 📈 Celkový Progress
-
+### Story Progress
 ```
-Progress Bar: [██░░░░░░░░░░░░░░░░░░] 8%
-
-├─ STORY 1: Core Generator      [█░░░░░░░░░░░░░] 8% (Aktuálne)
-├─ STORY 2: n8n Integrácia      [░░░░░░░░░░░░░░] 0%
-└─ STORY 3: Pokročilé Features  [░░░░░░░░░░░░░░] 0%
+STORY 1: Core Generator [████████░░░░░░░░░░░░] 25%
+STORY 2: n8n Integrácia [░░░░░░░░░░░░░░░░░░░░]  0%
+STORY 3: Advanced Features [░░░░░░░░░░░░░░░░░░░░]  0%
 ```
 
 ---
 
-## 🏗️ STORY 1: Core Generator ⚙️
+## 📋 STORY 1: Core Generator (Aktuálne)
 
-**Priorita:** KRITICKÁ  
-**Odhadovaný čas:** 2 týždne  
-**Progress:** 8%  
-**Stav:** PREBIEHA
+### Hotové Tasky ✅
 
-### Tasky
+#### ✅ Task 1.1 - Dokumentácia (2025-10-20)
+**Status:** HOTOVO  
+**Súbory:**
+- ✅ `docs/FULL_PROJECT_CONTEXT.md` - Kompletný kontext
+- ✅ `docs/PROJECT_STATUS.md` - Tento súbor
+- ✅ `docs/MASTER_CONTEXT.md` - Rýchla referencia
+- ✅ `docs/QUICK_START.md` - Návod na použitie
+- ✅ `docs/SYSTEM_PROMPT.md` - Claude inštrukcie
+- ✅ `docs/project_file_access.json` - GitHub manifest
+- ✅ Git repository inicializovaný
+- ✅ GitHub repository vytvorený
 
-#### ✅ Dokončené (1/12)
-
-- [x] **1.1 - Setup Projektu a Dokumentácia** (2025-10-20)
-  - Vytvorená repository štruktúra
-  - Počiatočná dokumentácia (FULL_PROJECT_CONTEXT.md)
-  - Pridané SYSTEM_PROMPT.md, MASTER_CONTEXT.md, QUICK_START.md
-  - Vytvorené PROJECT_STATUS.md (tento súbor)
-  - Vytvorené project_file_access.json
-  - Pushnuté na GitHub
-  - **VŠETKO PO SLOVENSKY** ✅
-
-#### 🔄 Prebieha (0/12)
-
-*Momentálne nič*
-
-#### 📋 Čaká (11/12)
-
-- [ ] **1.2 - Pydantic Modely** (Ďalej)
-  - Vytvoriť `ProjectConfig` model
-  - Vytvoriť vnorené modely (GitHub, Developer, Paths, atď.)
-  - Pridať validačné pravidlá
-  - Napísať testy modelov
-  - **Odhadovaný čas:** 1 deň
-
-- [ ] **1.3 - YAML Config Parser**
-  - Implementovať YAML loader
-  - Pridať error handling
-  - Validovať proti Pydantic modelom
-  - Napísať parser testy
-  - **Odhadovaný čas:** 1 deň
-
-- [ ] **1.4 - Template Engine (Jinja2)**
-  - Setup Jinja2 environment
-  - Vytvoriť základné šablóny
-  - Pridať custom filtre/funkcie
-  - Testovať rendering šablón
-  - **Odhadovaný čas:** 2 dni
-
-- [ ] **1.5 - File Generator Logika**
-  - Implementovať vytváranie adresárovej štruktúry
-  - Pridať generovanie súborov zo šablón
-  - Riešiť file permissions
-  - Napísať generator testy
-  - **Odhadovaný čas:** 2 dni
-
-- [ ] **1.6 - Git Operations Wrapper**
-  - Vytvoriť Git helper class
-  - Implementovať init, add, commit
-  - Pridať branch management
-  - Napísať Git testy
-  - **Odhadovaný čas:** 1 deň
-
-- [ ] **1.7 - GitHub API Klient**
-  - Vytvoriť GitHub helper class
-  - Implementovať vytvorenie repo
-  - Pridať upload súborov na GitHub
-  - Riešiť autentifikáciu
-  - Napísať API testy
-  - **Odhadovaný čas:** 2 dni
-
-- [ ] **1.8 - Input Validátory**
-  - Vytvoriť validačné funkcie
-  - Pridať pre-generation kontroly
-  - Validovať GitHub credentials
-  - Testovať validačnú logiku
-  - **Odhadovaný čas:** 1 deň
-
-- [ ] **1.9 - Hlavný project_creator.py**
-  - Implementovať hlavnú generačnú logiku
-  - Pridať CLI argument parsing
-  - Integrovať všetky komponenty
-  - Pridať progress indikátory
-  - **Odhadovaný čas:** 2 dni
-
-- [ ] **1.10 - Unit Testy**
-  - Napísať komplexné unit testy
-  - Dosiahnuť 80%+ pokrytie kódu
-  - Pridať fixtures a mocks
-  - Dokumentovať test cases
-  - **Odhadovaný čas:** 2 dni
-
-- [ ] **1.11 - Integračné Testovanie**
-  - End-to-end test scenáre
-  - Testovať skutočné GitHub operácie
-  - Testovať generovanie súborov
-  - Performance testing
-  - **Odhadovaný čas:** 1 deň
-
-- [ ] **1.12 - Finalizácia Dokumentácie**
-  - Dokončiť všetky docstrings
-  - Aktualizovať architecture docs
-  - Vytvoriť usage príklady
-  - Nahrať demo video
-  - **Odhadovaný čas:** 1 deň
+**Session:** [2025-10-20 Initial Setup](sessions/2025-10-20-initial-setup.md)
 
 ---
 
-## 🤖 STORY 2: n8n Integrácia
+#### ✅ Task 1.2 - Pydantic Modely (2025-10-20)
+**Status:** HOTOVO  
+**Chat:** https://claude.ai/chat/e4f4401e-9490-4509-ad8c-f4c7b8dcc2da
 
-**Priorita:** STREDNÁ  
-**Odhadovaný čas:** 3-5 dní  
-**Progress:** 0%  
-**Stav:** NAPLÁNOVANÉ
+**Vytvorené:**
+- ✅ `src/models/project_config.py` - Kompletné Pydantic modely
+  - `ProjectConfig` - hlavný model
+  - `ProjectInfo` - základné info
+  - `GitHubConfig` - GitHub settings
+  - `DeveloperInfo` - info o vývojárovi
+  - `PathsConfig` - cesty k projektom
+  - `TechStackConfig` - technológie
+  - `OptionalInfo` - voliteľné údaje
+  - `FeaturesConfig` - feature flags
 
-### Tasky
+**Features:**
+- ✅ Email validácia s `email-validator`
+- ✅ Slug validácia (lowercase, alfanumerické + pomlčky)
+- ✅ Repo name validácia
+- ✅ Domain validácia
+- ✅ Helper metódy:
+  - `get_full_github_url()` - kompletná GitHub URL
+  - `get_local_project_path()` - lokálna cesta
+  - `get_raw_url_base()` - base pre raw URLs
 
-- [ ] **2.1 - File Monitor Workflow**
-  - Vytvoriť n8n workflow pre monitoring `configs/queue/`
-  - Setup file triggers
-  - **Odhadovaný čas:** 4 hodiny
+**Dependencies pridané:**
+- `email-validator>=2.3.0`
 
-- [ ] **2.2 - Python Executor Node**
-  - Konfigurovať Python script execution
-  - Odovzdať YAML config ako parameter
-  - **Odhadovaný čas:** 4 hodiny
-
-- [ ] **2.3 - Email Notifikácie**
-  - Setup SMTP konfigurácia
-  - Vytvoriť success/error email šablóny
-  - **Odhadovaný čas:** 2 hodiny
-
-- [ ] **2.4 - Error Handling**
-  - Pridať retry logiku
-  - Implementovať error notifikácie
-  - Presunúť neúspešné configy do error priečinka
-  - **Odhadovaný čas:** 4 hodiny
-
-- [ ] **2.5 - Testovanie**
-  - Testovať celý automation workflow
-  - Overiť doručenie emailov
-  - **Odhadovaný čas:** 4 hodiny
+**Testovanie:**
+- ✅ Modely otestované v Python Console
+- ✅ Všetky validácie fungujú
 
 ---
 
-## 🚀 STORY 3: Pokročilé Features
+#### ✅ Task 1.3 - YAML Config Parser (2025-10-20)
+**Status:** HOTOVO  
+**Chat:** https://claude.ai/chat/ebdb0242-c21b-4809-9337-a2ddd8c62bf7
 
-**Priorita:** NÍZKA  
-**Odhadovaný čas:** 1 týždeň  
-**Progress:** 0%  
-**Stav:** NAPLÁNOVANÉ
+**Vytvorené:**
+- ✅ `src/generator/config_parser.py` - YAML parser s validáciou
+  - `ConfigParser` class
+  - `ConfigParserError` exception
+  - Path validácia
+  - YAML syntax validácia
+  - Pydantic validácia
 
-### Tasky
+**Features:**
+- ✅ Načítanie YAML súborov
+- ✅ Validácia pomocou Pydantic modelov
+- ✅ Error handling:
+  - Chýbajúci súbor
+  - Neplatný YAML syntax
+  - Validačné chyby Pydantic
+- ✅ Helper metódy:
+  - `parse_file()` - parse súboru
+  - `validate_yaml_string()` - validácia YAML stringu
+  - `get_config()` - getter pre ProjectConfig
+- ✅ CLI podpora pre testing:
+  ```bash
+  python -m src.generator.config_parser configs/config_template.yaml
+  ```
 
-- [ ] **3.1 - CLI Interface**
-  - Pridať Click/Typer pre lepšie CLI
-  - Interaktívny mód
-  - **Odhadovaný čas:** 1 deň
+**Opravy:**
+- ✅ `configs/config_template.yaml` - opravené optional fields (null namiesto "")
+- ✅ `docs/SYSTEM_PROMPT.md` - pridaný Git workflow section
 
-- [ ] **3.2 - Podpora Vlastných Šablón**
-  - Povoliť user-provided šablóny
-  - Koncept template marketplace
-  - **Odhadovaný čas:** 2 dni
-
-- [ ] **3.3 - Validácia Šablón**
-  - Validovať Jinja2 syntax
-  - Kontrolovať požadované premenné
-  - **Odhadovaný čas:** 1 deň
-
-- [ ] **3.4 - Progress Indikátory**
-  - Pridať rich progress bars
-  - Live status updates
-  - **Odhadovaný čas:** 4 hodiny
-
-- [ ] **3.5 - Dry-run Mód**
-  - Náhľad bez vytvárania
-  - Ukázať čo by sa vygenerovalo
-  - **Odhadovaný čas:** 4 hodiny
-
----
-
-## 📅 Sprint Plán
-
-### Týždeň 1 (20-26 Okt)
-- ✅ Deň 1: Setup dokumentácie (1.1) - HOTOVO
-- 🎯 Deň 2-3: Pydantic modely (1.2)
-- 🎯 Deň 4: YAML parser (1.3)
-- 🎯 Deň 5-7: Template engine (1.4)
-
-### Týždeň 2 (27 Okt - 2 Nov)
-- 🎯 Deň 1-2: File generator (1.5)
-- 🎯 Deň 3: Git operations (1.6)
-- 🎯 Deň 4-5: GitHub klient (1.7)
-- 🎯 Deň 6: Input validátory (1.8)
-
-### Týždeň 3 (3-9 Nov)
-- 🎯 Deň 1-2: Hlavný creator (1.9)
-- 🎯 Deň 3-4: Unit testy (1.10)
-- 🎯 Deň 5: Integračné testy (1.11)
-- 🎯 Deň 6-7: Finalizácia docs (1.12)
+**Testovanie:**
+- ✅ Parser otestovaný s `config_template.yaml`
+- ✅ Validácia funguje správne
+- ✅ Error handling funguje
 
 ---
 
-## 🎯 Milestones
+### Aktívny Task 🔄
 
-| Milestone | Cieľový Dátum | Stav |
-|-----------|-------------|--------|
-| **MVP Hotové** | 2025-11-09 | 🎯 Prebieha |
-| **n8n Integrácia** | 2025-11-15 | ⏳ Čaká |
-| **Pokročilé Features** | 2025-11-30 | ⏳ Čaká |
-| **V1.0 Release** | 2025-12-01 | ⏳ Čaká |
+#### 🔄 Task 1.4 - Template Engine (Jinja2)
+**Status:** PRIPRAVENÉ  
+**Priority:** HIGH  
+**Estimated:** 6-8 hodín
 
----
+**Plán:**
+- [ ] Vytvoriť `src/generator/template_engine.py`
+- [ ] Jinja2 engine setup
+- [ ] Template loader
+- [ ] Context builder pre templates
+- [ ] Helper funkcie/filtre
+- [ ] Error handling
+- [ ] Template renderer
 
-## ✅ Metriky Úspechu
+**Potrebné Jinja2 templates v `src/templates/`:**
+- [ ] `project_files/full_context.md.j2`
+- [ ] `project_files/project_status.md.j2`
+- [ ] `project_files/readme.md.j2`
+- [ ] `project_files/requirements.txt.j2`
+- [ ] `project_files/gitignore.j2`
 
-### MVP Požiadavky
-- [x] Repository štruktúra vytvorená
-- [x] Dokumentačná infraštruktúra ✅
-- [ ] Jeden príkaz generuje projekt
-- [ ] GitHub repo vytvorené automaticky
-- [ ] Všetky šablóny fungujú
-- [ ] Čas generovania < 60 sekúnd
-- [ ] Testy prechádzajú (80%+ pokrytie)
-
-### V1.0 Požiadavky
-- [ ] Všetky MVP features
-- [ ] n8n automatizácia funguje
-- [ ] Email notifikácie
-- [ ] Robustný error handling
-- [ ] Kompletná dokumentácia
+**Blocker:** Žiadny
 
 ---
 
-## 🐛 Známe Problémy
+### Plánované Tasky 📅
 
-*Zatiaľ žiadne - projekt práve začal!*
+#### Task 1.5 - File Generator Logika
+**Priority:** HIGH  
+**Dependencies:** Task 1.4
 
----
+#### Task 1.6 - Git Operations Wrapper
+**Priority:** HIGH  
+**Dependencies:** Task 1.5
 
-## 💡 Nápady / Backlog
+#### Task 1.7 - GitHub API Klient
+**Priority:** CRITICAL  
+**Dependencies:** Task 1.6
 
-- [ ] Web UI pre konfiguráciu
-- [ ] GitHub Actions CI/CD šablóna
-- [ ] Docker podpora
-- [ ] Template marketplace
-- [ ] Mechanizmus aktualizácie projektov
-- [ ] Analytics dashboard
-- [ ] Multi-language podpora (nielen Python)
+#### Task 1.8 - Input Validátory
+**Priority:** MEDIUM  
+**Dependencies:** Task 1.3
 
----
+#### Task 1.9 - Hlavný project_creator.py
+**Priority:** CRITICAL  
+**Dependencies:** Tasks 1.4-1.8
 
-## 📝 Nedávne Sessions
+#### Task 1.10 - Unit Testy
+**Priority:** HIGH  
+**Dependencies:** Task 1.9
 
-### 2025-10-20: Počiatočný Setup ✅
-- Vytvorená kompletná dokumentačná infraštruktúra
-- Setup GitHub repository
-- Definovaná architektúra projektu
-- Vytvorené všetky základné súbory
-- **VŠETKO PREPÍSANÉ DO SLOVENČINY**
-- **Trvanie:** 3 hodiny
-- **Commity:** 2 (počiatočný setup + slovenská dokumentácia)
+#### Task 1.11 - Integračné Testovanie
+**Priority:** HIGH  
+**Dependencies:** Task 1.10
 
----
-
-## 🔄 Change Log
-
-### Verzia 0.1.0 (2025-10-20)
-- 🎉 Počiatočný setup projektu
-- ✅ Dokumentačná štruktúra
-- ✅ GitHub repository vytvorené
-- ✅ Core súbory (SYSTEM_PROMPT, MASTER_CONTEXT, QUICK_START)
-- ✅ PROJECT_STATUS.md tracking
-- ✅ project_file_access.json manifest
-- ✅ **CELÁ DOKUMENTÁCIA PO SLOVENSKY**
+#### Task 1.12 - Finalizácia Dokumentácie
+**Priority:** MEDIUM  
+**Dependencies:** Task 1.11
 
 ---
 
-## 📊 Štatistiky Kódu
+## 🎉 NEDÁVNE ÚSPECHY
 
-```
-Celkový Počet Súborov: 15 (odhadované po setupu)
-Celkový Počet Riadkov: ~500 (zatiaľ len docs)
-Pokrytie Testami: 0% (zatiaľ žiadny kód)
-Dokumentácia: 100% (výborné!)
-Jazyk Dokumentov: Slovenčina ✅
-```
-
----
-
-## 🎯 Ciele Ďalšej Session
-
-**Prioritné Tasky pre Ďalšiu Session:**
-1. Implementovať Pydantic modely (Task 1.2)
-2. Vytvoriť model testy
-3. Aktualizovať PROJECT_STATUS.md s progressom
-4. Commitnúť a pushnúť zmeny
-
-**Otázky na Vyriešenie:**
-- Podporovať public aj private repo vytváranie?
-- Aká je default Python verzia? (3.11+)
-- Zahrňovať Docker by default alebo ako option?
+### 2025-10-20
+- ✅ **Task 1.1 COMPLETE** - Dokumentácia vytvorená
+- ✅ **Task 1.2 COMPLETE** - Pydantic modely implementované
+  - Email validácia, slug validácia
+  - Helper metódy pre URLs a cesty
+  - Kompletná type coverage
+- ✅ **Task 1.3 COMPLETE** - YAML Config Parser hotový
+  - Načítanie a validácia YAML
+  - Error handling
+  - CLI podpora
+- ✅ Git repository inicializovaný
+- ✅ GitHub repository vytvorený (https://github.com/rauschiccsk/project-generator)
+- ✅ Dokumentačná štruktúra vytvorená
+- ✅ Prvý functional code - modely + parser fungujú!
 
 ---
 
-## 📞 Tím
+## 🚧 AKTUÁLNE BLOKERY
 
-- **Vývojár:** ICC (rausch@icc.sk)
-- **Repository:** https://github.com/rauschiccsk/project-generator
-- **Lokálna Cesta:** c:\Development\project-generator
+**Žiadne momentálne** ✅
 
 ---
 
-**Posledná Aktualizácia:** 2025-10-20 by ICC  
-**Ďalšia Revízia:** Po dokončení Task 1.2  
-**Stav:** 🟢 Aktívny Vývoj
+## 📈 STORY 2: n8n Integrácia (Plánované)
 
-🏭 **Poďme vytvoriť ten generátor!**
+**Status:** Čaká na STORY 1  
+**Start Date:** TBD (po dokončení STORY 1)  
+**Priority:** MEDIUM
+
+### Tasky (0/5)
+- [ ] 2.1 - File monitor workflow
+- [ ] 2.2 - Python executor node
+- [ ] 2.3 - Email notifikácie
+- [ ] 2.4 - Error handling
+- [ ] 2.5 - Testovanie
+
+---
+
+## 🚀 STORY 3: Advanced Features (Plánované)
+
+**Status:** Čaká na STORY 2  
+**Start Date:** TBD  
+**Priority:** LOW
+
+### Tasky (0/5)
+- [ ] 3.1 - CLI interface (Click/Typer)
+- [ ] 3.2 - Podpora vlastných šablón
+- [ ] 3.3 - Validácia šablón
+- [ ] 3.4 - Progress indikátory
+- [ ] 3.5 - Dry-run mód
+
+---
+
+## 📊 CELKOVÉ METRIKY
+
+### Progress
+- **STORY 1:** 25% (3/12 taskov)
+- **STORY 2:** 0% (0/5 taskov)
+- **STORY 3:** 0% (0/5 taskov)
+- **Celkovo:** 14% (3/22 taskov)
+
+### Časová Os
+- **Začiatok projektu:** 2025-10-20
+- **Dni aktívne:** 1
+- **Posledná aktivita:** 2025-10-20
+- **Ďalší milestone:** STORY 1 Complete (est. 2025-11-09)
+
+### Súbory
+- **Vytvorené súbory:** 12+
+- **Riadkov kódu:** ~800
+- **Test coverage:** 0% (testy ešte nie sú)
+- **Dokumentácia:** 100% (docs/ kompletná)
+
+---
+
+## 🎯 ĎALŠIE KROKY
+
+### Ihneď (Dnes/Zajtra)
+1. **Task 1.4** - Template Engine (Jinja2)
+   - Implementovať template_engine.py
+   - Vytvoriť základné .j2 templates
+   - Testovať rendering
+
+### Tento Týždeň
+2. **Task 1.5** - File Generator
+3. **Task 1.6** - Git Operations
+4. **Task 1.7** - GitHub API Client
+
+### Budúci Týždeň
+5. **Task 1.8** - Input Validátory
+6. **Task 1.9** - Hlavný project_creator.py
+7. **Task 1.10-1.12** - Testing & Finalizácia
+
+---
+
+## 📝 SESSION NOTES
+
+### Sessions
+- [2025-10-20 Initial Setup](sessions/2025-10-20-initial-setup.md) - Task 1.1
+- [2025-10-20 Pydantic Models](https://claude.ai/chat/e4f4401e-9490-4509-ad8c-f4c7b8dcc2da) - Task 1.2
+- [2025-10-20 YAML Parser](https://claude.ai/chat/ebdb0242-c21b-4809-9337-a2ddd8c62bf7) - Task 1.3
+
+---
+
+## 🔗 UŽITOČNÉ LINKY
+
+- **GitHub Repo:** https://github.com/rauschiccsk/project-generator
+- **Local Path:** c:\Development\project-generator
+- **Raw Context:** https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/FULL_PROJECT_CONTEXT.md
+
+---
+
+**Verzia:** 0.1.0  
+**Posledná Aktualizácia:** 2025-10-20  
+**Nasledujúca Review:** Po dokončení Task 1.4
+
+---
+
+✅ **Status je aktuálny!**
