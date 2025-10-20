@@ -1,102 +1,102 @@
-# 🏭 PROJECT GENERATOR - Master Context
+# 🏭 PROJECT GENERATOR - MASTER KONTEXT
 
-**Quick Reference Guide**
+**Rýchly Referenčný Návod**
 
 ---
 
-## 🎯 What Is This?
+## 🎯 Čo je to?
 
-**One-command Python project generator** that creates a complete project in 30 seconds:
-- ✅ Full project structure
+**One-command Python project generator** ktorý vytvorí kompletný projekt za 30 sekúnd:
+- ✅ Plná štruktúra projektu
 - ✅ GitHub repository
-- ✅ Documentation infrastructure
-- ✅ Git initialized and committed
-- ✅ Ready for Claude collaboration
+- ✅ Dokumentačná infraštruktúra
+- ✅ Git inicializovaný a commitnutý
+- ✅ Hotové pre Claude
 
-**Solves:** 3+ hours of manual project setup → 30 seconds automated
+**Rieši:** 3+ hodiny manuálneho setupu → 30 sekúnd automatizovane
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Rýchly Štart
 
 ```bash
-# 1. Clone
+# 1. Klonovanie
 git clone https://github.com/rauschiccsk/project-generator.git
 cd project-generator
 
 # 2. Setup
 pip install -r requirements.txt
-cp .env.template .env  # Add GitHub token
+cp .env.template .env  # Pridaj GitHub token
 
-# 3. Configure
-cp configs/config_template.yaml configs/my_project.yaml
-# Edit my_project.yaml with your project details
+# 3. Konfigurácia
+cp configs/config_template.yaml configs/moj_projekt.yaml
+# Uprav moj_projekt.yaml s detailami projektu
 
-# 4. Generate
-python src/generator/project_creator.py --config configs/my_project.yaml
+# 4. Generovanie
+python src/generator/project_creator.py --config configs/moj_projekt.yaml
 
-# Done! ✅
+# Hotovo! ✅
 ```
 
 ---
 
-## 📋 Key Files
+## 📋 Kľúčové Súbory
 
-| File | Purpose | Location |
+| Súbor | Účel | Umiestnenie |
 |------|---------|----------|
-| **FULL_PROJECT_CONTEXT.md** | Complete documentation | `docs/` |
-| **PROJECT_STATUS.md** | Development tracking | `docs/` |
-| **SYSTEM_PROMPT.md** | Claude instructions | `docs/` |
-| **QUICK_START.md** | Getting started guide | `docs/` |
-| **project_file_access.json** | Files manifest | `docs/` |
-| **config_template.yaml** | Project config template | `configs/` |
-| **project_creator.py** | Main generator | `src/generator/` |
+| **FULL_PROJECT_CONTEXT.md** | Kompletná dokumentácia | `docs/` |
+| **PROJECT_STATUS.md** | Sledovanie vývoja | `docs/` |
+| **SYSTEM_PROMPT.md** | Claude inštrukcie | `docs/` |
+| **QUICK_START.md** | Návod na začiatok | `docs/` |
+| **project_file_access.json** | Manifest súborov | `docs/` |
+| **config_template.yaml** | Konfig šablóna projektu | `configs/` |
+| **project_creator.py** | Hlavný generátor | `src/generator/` |
 
 ---
 
 ## 💾 Tech Stack
 
 ```yaml
-Language: Python 3.11+
+Jazyk: Python 3.11+
 Templates: Jinja2
 Config: YAML (PyYAML)
-Validation: Pydantic
+Validácia: Pydantic
 GitHub: PyGithub
-Testing: pytest
+Testovanie: pytest
 ```
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Architektúra
 
 ```
-YAML Config → Python Generator → GitHub API → ✅ Ready!
+YAML Config → Python Generator → GitHub API → ✅ Hotovo!
      ↓              ↓                ↓
-  Parse &      Generate        Create Repo
-  Validate      Files          & Push
+  Parse &      Generuj        Vytvor Repo
+  Validuj      Súbory         & Push
 ```
 
 ---
 
-## 📊 Development Status
+## 📊 Stav Vývoja
 
-**Current Phase:** STORY 1 - Core Generator  
-**Progress:** ~10%  
-**Next:** Pydantic models, YAML parser, template engine
+**Aktuálna Fáza:** STORY 1 - Core Generator  
+**Progress:** ~8%  
+**Ďalej:** Pydantic modely, YAML parser, template engine
 
 **Stories:**
-1. **Core Generator** ⚙️ (Current) - 2 weeks
-2. **n8n Integration** 🤖 - 3-5 days
-3. **Advanced Features** 🚀 - 1 week
+1. **Core Generator** ⚙️ (Aktuálne) - 2 týždne
+2. **n8n Integrácia** 🤖 - 3-5 dní
+3. **Pokročilé Features** 🚀 - 1 týždeň
 
 ---
 
-## 📁 Generated Project Structure
+## 📁 Vygenerovaná Štruktúra Projektu
 
-Every generated project includes:
+Každý vygenerovaný projekt obsahuje:
 
 ```
-new-project/
+novy-projekt/
 ├── docs/
 │   ├── FULL_PROJECT_CONTEXT.md
 │   ├── PROJECT_STATUS.md
@@ -114,33 +114,33 @@ new-project/
 
 ---
 
-## 🎯 Success Criteria
+## 🎯 Kritériá Úspechu
 
 **MVP:**
-- ✅ Single command creates full project
-- ✅ GitHub repo created automatically
-- ✅ All files generated from templates
-- ✅ Generation time < 60 seconds
-- ✅ Raw URL functional for Claude
+- ✅ Jeden príkaz vytvorí celý projekt
+- ✅ GitHub repo automaticky
+- ✅ Všetky súbory z šablón
+- ✅ Čas generovania < 60 sekúnd
+- ✅ Raw URL funkčné pre Claude
 
 ---
 
-## ⚙️ Configuration Example
+## ⚙️ Príklad Konfigurácie
 
 ```yaml
 project:
-  name: "My New Project"
-  slug: "my-new-project"
-  description: "Project description"
+  name: "Môj Nový Projekt"
+  slug: "moj-novy-projekt"
+  description: "Popis projektu"
 
 github:
-  username: "your-username"
-  repo_name: "my-new-project"
+  username: "tvoj-username"
+  repo_name: "moj-novy-projekt"
   visibility: "private"
 
 developer:
-  name: "Your Name"
-  email: "your@email.com"
+  name: "Tvoje Meno"
+  email: "tvoj@email.com"
 
 tech_stack:
   backend: ["fastapi"]
@@ -149,50 +149,50 @@ tech_stack:
 
 ---
 
-## 🔧 Common Tasks
+## 🔧 Bežné Úlohy
 
-### Start Development Session
-1. Load project context
-2. Check `PROJECT_STATUS.md`
-3. Choose task to work on
+### Začni Vývojovú Session
+1. Načítaj project context
+2. Over PROJECT_STATUS.md
+3. Vyber task na ktorom pracuješ
 
-### Generate New Project
+### Vygeneruj Nový Projekt
 ```bash
-python src/generator/project_creator.py --config configs/my_project.yaml
+python src/generator/project_creator.py --config configs/moj_projekt.yaml
 ```
 
-### Run Tests
+### Spusti Testy
 ```bash
 pytest tests/ -v
 ```
 
-### Update Documentation
+### Aktualizuj Dokumentáciu
 ```bash
 python scripts/generate_project_access.py
 ```
 
 ---
 
-## 📞 Resources
+## 📞 Zdroje
 
 - **GitHub:** https://github.com/rauschiccsk/project-generator
-- **Local:** c:\Development\project-generator
+- **Lokálne:** c:\Development\project-generator
 - **Context URL:** https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/FULL_PROJECT_CONTEXT.md
-- **Developer:** ICC (rausch@icc.sk)
+- **Vývojár:** ICC (rausch@icc.sk)
 
 ---
 
-## 🎓 Inspired By
+## 🎓 Inšpirácia
 
-- **supplier_invoice_loader** - Multi-customer patterns
-- **orthodox-portal** - Documentation structure
+- **supplier_invoice_loader** - Multi-customer vzory
+- **orthodox-portal** - Dokumentačná štruktúra
 
-Both projects proved the "single raw URL" workflow works perfectly.
+Oba projekty dokázali že "single raw URL" workflow funguje perfektne.
 
 ---
 
-**Version:** 0.1.0  
-**Updated:** 2025-10-20  
-**Status:** Active Development
+**Verzia:** 0.1.0  
+**Aktualizované:** 2025-10-20  
+**Stav:** Aktívny Vývoj
 
-🏭 **Automate. Generate. Build.**
+🏭 **Automatizuj. Generuj. Vytváraj.**

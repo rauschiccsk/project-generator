@@ -1,188 +1,221 @@
-# 🤖 SYSTEM PROMPT - Project Generator
+# 🏭 PROJECT GENERATOR - SYSTEM PROMPT
 
-## 📋 FOR CLAUDE: Project Loading Instructions
+## 🎯 PREHĽAD PROJEKTU
 
-**When you see the FULL_PROJECT_CONTEXT.md URL at the start of conversation:**
-
-### 1. Load Required Files
-Immediately fetch these files from GitHub:
-```
-https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/MASTER_CONTEXT.md
-https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/PROJECT_STATUS.md
-https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/project_file_access.json
-```
-
-### 2. Confirm Loading
-After loading all files, respond with:
-```
-✅ Project Generator načítaný!
-📊 Status: [current status from PROJECT_STATUS.md]
-🎯 Ready to work. Čo robíme?
-```
-
-### 3. Always Check Status First
-**Before ANY work:**
-- Check `PROJECT_STATUS.md` for current story/task
-- Verify what was completed in last session
-- Ask user which task to work on
+**Názov:** Project Generator  
+**Účel:** Automatizácia tvorby nových Python projektov  
+**GitHub:** https://github.com/rauschiccsk/project-generator  
+**Vývojár:** ICC (rausch@icc.sk)
 
 ---
 
-## 🔧 Working Rules
+## 🚨 PRAVIDLO #1: JEDNODUCHOSŤ
 
-### Code Standards
-- ✅ **PEP 8** style guide
-- ✅ **Type hints** everywhere
-- ✅ **Docstrings** for all functions/classes
-- ✅ **English** for variable/function names
-- ✅ **Slovak** comments for business logic
-- ✅ **pytest** for testing (80%+ coverage target)
+**KRITICKÉ:** Keď user pošle URL na FULL_PROJECT_CONTEXT.md:
 
-### Git Workflow
-```bash
-# Before starting work
-git pull origin main
+1. ✅ **NAČÍTAJ** tento jeden dokument
+2. ✅ **NEPOKLADAJ SA** načítať iné súbory
+3. ✅ **NEZOBRAZUJ** varovania ani errors
+4. ✅ **ODPOVEDZ:** "✅ Projekt načítaný. Čo robíme?"
+5. ✅ **KOMUNIKUJ** po slovensky
 
-# During work (small commits)
-git add .
-git commit -m "feat: descriptive message"
-
-# After completion
-git push origin main
-```
-
-### Commit Message Format
-```
-feat: add new feature
-fix: bug fix
-docs: documentation update
-test: add tests
-refactor: code refactoring
-style: formatting changes
-```
-
-### Documentation Updates
-**After EVERY session:**
-1. ✅ Update `PROJECT_STATUS.md` with progress
-2. ✅ Create session note in `docs/sessions/YYYY-MM-DD-description.md`
-3. ✅ Update `project_file_access.json` if files added/removed
-4. ✅ Commit and push changes
+**⚠️ AK NEMÔŽEŠ NAČÍTAŤ FULL_PROJECT_CONTEXT.md → POVEDZ TO!**  
+**⚠️ NIKDY NEPREDPOKLADAJ ŠTRUKTÚRU PROJEKTU BEZ OVERENIA!**
 
 ---
 
-## 📁 Project Structure Reference
+## 📊 INFO O PROJEKTE
 
-```
-project-generator/
-│
-├── docs/                           # 📚 Documentation
-│   ├── FULL_PROJECT_CONTEXT.md    # Complete context
-│   ├── SYSTEM_PROMPT.md           # This file
-│   ├── MASTER_CONTEXT.md          # Quick reference
-│   ├── QUICK_START.md             # Getting started
-│   ├── PROJECT_STATUS.md          # Development tracking
-│   ├── project_file_access.json   # Files manifest
-│   ├── architecture/              # Design docs
-│   └── sessions/                  # Session notes
-│
-├── src/                           # 🐍 Python source
-│   ├── generator/                 # Core generator logic
-│   ├── models/                    # Pydantic models
-│   └── templates/                 # Jinja2 templates
-│
-├── tests/                         # 🧪 Test suite
-├── configs/                       # ⚙️ Configuration files
-├── scripts/                       # 🔧 Utility scripts
-└── n8n_workflows/                # 🤖 Automation
-```
-
----
-
-## 🎯 Current Development Phase
-
-**STORY 1: Core Generator** (In Progress)
-- Building the fundamental project generation engine
-- Target: Complete project creation in < 60 seconds
-- Focus: YAML → Python → GitHub → Ready
-
-**Priority Tasks:**
-1. Pydantic models for config validation
-2. YAML parser
-3. Jinja2 template engine
-4. File generation logic
-5. GitHub API integration
-
----
-
-## ⚠️ Critical Reminders
-
-### For EVERY Chat Session:
-1. 🔥 **LOAD** all files from GitHub first
-2. 🔥 **CHECK** PROJECT_STATUS.md before starting
-3. 🔥 **COMMIT** changes frequently
-4. 🔥 **UPDATE** documentation after work
-5. 🔥 **PUSH** to GitHub at session end
-
-### Never Assume:
-- ❌ Don't assume file structure without checking
-- ❌ Don't skip documentation updates
-- ❌ Don't make large uncommitted changes
-- ❌ Don't work on multiple stories simultaneously
-
-### Always:
-- ✅ Test code before committing
-- ✅ Update tests with new features
-- ✅ Keep commits small and focused
-- ✅ Write clear commit messages
-- ✅ Ask if uncertain about direction
-
----
-
-## 💡 Quick Commands
-
-### Start New Session
-```python
-# 1. Load project context
-# 2. Check PROJECT_STATUS.md
-# 3. Ask: "Which task should I work on?"
-```
-
-### End Session
-```python
-# 1. Update PROJECT_STATUS.md
-# 2. Create session note
-# 3. Commit all changes
-# 4. Push to GitHub
-# 5. Confirm: "✅ Session completed, changes pushed"
-```
-
----
-
-## 📞 Contact & Resources
-
-- **Developer:** ICC (rausch@icc.sk)
-- **GitHub:** https://github.com/rauschiccsk/project-generator
-- **Local Path:** c:\Development\project-generator
+### Základné údaje
 - **Tech Stack:** Python 3.11+, Jinja2, Pydantic, PyGithub
+- **Účel:** Generovanie kompletných Python projektov za 30s
+- **Development:** c:\Development\project-generator
+- **Vývojár:** ICC
+
+### GitHub Repository
+```
+URL: https://github.com/rauschiccsk/project-generator
+Branch: main (produkcia)
+```
+
+### Aktuálny Stav
+- **Fáza:** Počiatočný Setup
+- **Aktívna Story:** STORY 1 - Core Generator
+- **Progress:** 8% (1/12 taskov hotových)
 
 ---
 
-## 🎓 Project Philosophy
+## 🏗️ ARCHITEKTÚRA
 
-**Goal:** Automate the boring stuff
-- No more 3+ hour project setups
-- One command → Complete project
-- Consistent structure across all projects
-- Ready for Claude collaboration
+### Flow
+```
+YAML Config → Python Generator → GitHub API → ✅ Hotový Projekt
+```
 
-**Inspired by:**
-- `supplier_invoice_loader` - Architecture patterns
-- `orthodox-portal` - Documentation structure
+### Kľúčové komponenty
+1. **YAML Parser** - načítanie konfigurácie
+2. **Pydantic Models** - validácia dát
+3. **Jinja2 Engine** - generovanie súborov zo šablón
+4. **GitHub API** - vytvorenie repository a upload súborov
+5. **Git Operations** - init, commit, push
 
 ---
 
-**Version:** 1.0.0  
-**Last Updated:** 2025-10-20  
-**Status:** Active Development
+## 🎯 STORIES OVERVIEW
 
-🤖 **Ready to build! Let's automate project creation!**
+### STORY 1: Core Generator ⚙️
+Základná funkcionalita generovania projektov
+- YAML parser, Pydantic modely, Jinja2, GitHub API
+
+### STORY 2: n8n Integrácia 🤖
+Automatizácia cez n8n workflows
+- File monitoring, email notifikácie
+
+### STORY 3: Pokročilé Features 🚀
+CLI interface, vlastné šablóny, dry-run mód
+
+---
+
+## 🔄 PRAVIDLÁ PRÁCE
+
+### Pri každom novom chate:
+1. 🔥 **NAČÍTAJ** FULL_PROJECT_CONTEXT.md
+2. 🔥 **OVER** aktuálny stav
+3. 🔥 **COMMIT + PUSH** po dokončení práce
+4. 🔥 **AKTUALIZUJ** dokumentáciu
+
+### Git workflow:
+- ✅ Commit často, malé zmeny
+- ✅ Opisné commit messages (feat/fix/docs/refactor/test)
+- ✅ Test pred commitom
+- ✅ Pull pred push
+
+### Dokumentácia:
+- ✅ Update FULL_PROJECT_CONTEXT pri veľkých zmenách
+- ✅ Update PROJECT_STATUS po každej session
+- ✅ Session notes každý deň
+- ✅ Code comments v slovenčine
+
+---
+
+## 📝 COMMIT MESSAGE KONVENCIA
+
+```
+feat: pridaj novú feature
+fix: oprav bug
+docs: aktualizuj dokumentáciu
+refactor: refaktoruj kód
+test: pridaj testy
+chore: aktualizuj závislosti
+style: formátovanie kódu
+perf: zlepši výkon
+```
+
+**Príklad:**
+```bash
+git commit -m "feat: pridaj Pydantic modely pre ProjectConfig
+
+- Vytvorené modely pre projekt, github, developer, paths
+- Pridaná validácia pre všetky polia
+- Implementované unit testy
+- Pridané type hints
+
+STORY-1 Task 1.2 complete"
+```
+
+---
+
+## 🔐 SECURITY & BEST PRACTICES
+
+- ✅ Heshlované heslá (bcrypt)
+- ✅ Environment premenné pre secrets
+- ✅ Input validácia (Pydantic)
+- ✅ **NIKDY** necommituj .env súbory
+- ✅ GitHub token v .env
+- ✅ Rate limiting pre API
+
+---
+
+## 📞 KONTAKT & ZDROJE
+
+### Email
+- **Projekt:** rausch@icc.sk
+
+### GitHub
+- **Repo:** https://github.com/rauschiccsk/project-generator
+- **Issues:** https://github.com/rauschiccsk/project-generator/issues
+
+### Dokumentácia
+- **FULL_PROJECT_CONTEXT:** Kompletný kontext projektu
+- **PROJECT_STATUS:** Aktuálny stav a progress
+- **MASTER_CONTEXT:** Architektúrne detaily
+
+---
+
+## ⚠️ KRITICKÉ PRIPOMIENKY
+
+1. 🔥 **VŽDY NAČÍTAJ** FULL_PROJECT_CONTEXT.md ako prvé
+2. 🔥 **NIKDY** nepredpokladaj štruktúru
+3. 🔥 **VŽDY** over stav pred prácou
+4. 🔥 **VŽDY** commit po dokončení
+5. 🔥 **VŽDY** dokumentuj zmeny
+6. 🔥 **KOMUNIKUJ PO SLOVENSKY**
+
+---
+
+## 🎯 TEMPLATE PRE NOVÝ CHAT
+
+```markdown
+Pokračujeme na Project Generator projekte.
+
+https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/FULL_PROJECT_CONTEXT.md
+
+GitHub: https://github.com/rauschiccsk/project-generator
+
+Dnes chcem pracovať na: [STORY X, Task X.Y]
+```
+
+**Po načítaní odpovedz:**
+```
+✅ Projekt načítaný. Čo robíme?
+```
+
+---
+
+## 📚 QUICK REFERENCE
+
+### Kritické URL
+```
+Context:
+https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/FULL_PROJECT_CONTEXT.md
+
+Status:
+https://raw.githubusercontent.com/rauschiccsk/project-generator/main/docs/PROJECT_STATUS.md
+```
+
+### Bežné Príkazy
+```bash
+# Aktivuj venv
+cd c:\Development\project-generator
+venv\Scripts\activate
+
+# Spusti generátor
+python src/generator/project_creator.py --config configs/test.yaml
+
+# Testy
+pytest tests/
+
+# Git
+git status
+git add .
+git commit -m "feat: ..."
+git push
+```
+
+---
+
+**Posledná Aktualizácia:** 2025-10-20  
+**Verzia:** 1.0.0  
+**Stav:** Aktívny Vývoj
+
+🏭 **Automatizujme!**
